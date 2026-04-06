@@ -1,0 +1,128 @@
+backend:
+  name: github
+  repo: fusgement-cloud/web
+  branch: main
+  auth_scope: repo
+
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+locale: es
+
+collections:
+
+  # ── BLOG EN ESPAÑOL ──
+  - name: "blog_es"
+    label: "Blog (Español)"
+    label_singular: "Artículo ES"
+    folder: "_posts/es"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "es/blog/{{slug}}.html"
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        hint: "Título del artículo. Claro y con palabras clave."
+      - label: "Slug (URL)"
+        name: "slug"
+        widget: "string"
+        hint: "URL del artículo en minúsculas con guiones. Ej: que-es-la-pmo"
+      - label: "Fecha de publicación"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+      - label: "Meta description (SEO)"
+        name: "description"
+        widget: "string"
+        pattern: ['.{50,160}', "Entre 50 y 160 caracteres"]
+        hint: "Descripción para Google. Entre 50 y 160 caracteres."
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Gestión de proyectos", value: "gestion-proyectos" }
+          - { label: "Ingeniería eléctrica", value: "ingenieria-electrica" }
+          - { label: "Ingeniería", value: "ingenieria" }
+          - { label: "Consultoría", value: "consultoria" }
+      - label: "Imagen destacada"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Imagen de cabecera del artículo. Recomendado 1200x630px."
+      - label: "Texto alternativo de la imagen"
+        name: "image_alt"
+        widget: "string"
+        required: false
+      - label: "Autor"
+        name: "author"
+        widget: "string"
+        default: "Alberto Trujillo Sanz"
+      - label: "Publicado"
+        name: "en_slug"
+        widget: "string"
+        required: false
+        hint: "Slug del artículo equivalente en inglés para el hreflang."
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+
+  # ── BLOG EN INGLÉS ──
+  - name: "blog_en"
+    label: "Blog (English)"
+    label_singular: "Article EN"
+    folder: "_posts/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "en/blog/{{slug}}.html"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Slug (URL)"
+        name: "slug"
+        widget: "string"
+        hint: "Lowercase URL with hyphens. E.g: what-is-pmo"
+      - label: "Publication date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+      - label: "Meta description (SEO)"
+        name: "description"
+        widget: "string"
+        pattern: ['.{50,160}', "Between 50 and 160 characters"]
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Project Management", value: "project-management" }
+          - { label: "Electrical Engineering", value: "electrical-engineering" }
+          - { label: "Engineering", value: "engineering" }
+          - { label: "Consulting", value: "consulting" }
+      - label: "Featured image"
+        name: "image"
+        widget: "image"
+        required: false
+      - label: "Image alt text"
+        name: "image_alt"
+        widget: "string"
+        required: false
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Alberto Trujillo Sanz"
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true
+      - label: "Equivalent Spanish article (slug)"
+        name: "es_slug"
+        widget: "string"
+        required: false
+      - label: "Content"
+        name: "body"
+        widget: "markdown"

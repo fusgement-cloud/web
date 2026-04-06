@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No indexar la carpeta SSL (certificados, no es contenido web)
+Disallow: /ssl/
+
+Sitemap: https://fusgement.com/sitemap.xml

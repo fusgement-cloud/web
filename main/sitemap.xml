@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Raíz (redirige a ES) -->
+  <url>
+    <loc>https://fusgement.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ES: Inicio -->
+  <url>
+    <loc>https://fusgement.com/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ES: Dirección de proyectos -->
+  <url>
+    <loc>https://fusgement.com/es/direccion-de-proyectos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/direccion-de-proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/projectmanagement.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ES: Ingeniería eléctrica -->
+  <url>
+    <loc>https://fusgement.com/es/ingenieria-electrica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/ingenieria-electrica.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/electrical.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ES: Ingeniería -->
+  <url>
+    <loc>https://fusgement.com/es/ingenieria.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/ingenieria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/engineering.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ES: Otros servicios -->
+  <url>
+    <loc>https://fusgement.com/es/otros-servicios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/otros-servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/otherservices.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ES: Quiénes somos -->
+  <url>
+    <loc>https://fusgement.com/es/quienes-somos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/quienes-somos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/aboutus.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ES: Clientes -->
+  <url>
+    <loc>https://fusgement.com/es/clientes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/clientes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/customers.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ES: Contacto -->
+  <url>
+    <loc>https://fusgement.com/es/contacto.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/contact.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ES: Careers -->
+  <url>
+    <loc>https://fusgement.com/es/careers.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/careers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/careers.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ES: Legal -->
+  <url>
+    <loc>https://fusgement.com/es/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/legal.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- EN: Home -->
+  <url>
+    <loc>https://fusgement.com/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- EN: Project management -->
+  <url>
+    <loc>https://fusgement.com/en/projectmanagement.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/projectmanagement.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/direccion-de-proyectos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EN: Electrical engineering -->
+  <url>
+    <loc>https://fusgement.com/en/electrical.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/electrical.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/ingenieria-electrica.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EN: Engineering -->
+  <url>
+    <loc>https://fusgement.com/en/engineering.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/engineering.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/ingenieria.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EN: Other services -->
+  <url>
+    <loc>https://fusgement.com/en/otherservices.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/otherservices.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/otros-servicios.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EN: About us -->
+  <url>
+    <loc>https://fusgement.com/en/aboutus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/aboutus.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/quienes-somos.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EN: Customers -->
+  <url>
+    <loc>https://fusgement.com/en/customers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/customers.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/clientes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Contact -->
+  <url>
+    <loc>https://fusgement.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/contacto.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Careers -->
+  <url>
+    <loc>https://fusgement.com/en/careers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/careers.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/careers.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- EN: Legal -->
+  <url>
+    <loc>https://fusgement.com/en/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/legal.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

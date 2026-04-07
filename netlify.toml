@@ -1,2 +1,3 @@
 [build]
   publish = "main"
+  command = "node generate-sitemap.js"

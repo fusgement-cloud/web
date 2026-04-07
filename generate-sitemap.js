@@ -3,8 +3,8 @@ const path = require('path');
  
 const BASE_URL = 'https://fusgement.com';
 const POSTS_DIRS = [
-  { dir: '_posts/es', lang: 'es', altLang: 'en' },
-  { dir: '_posts/en', lang: 'en', altLang: 'es' },
+{ dir: 'main/_posts/es', lang: 'es' },
+{ dir: 'main/_posts/en', lang: 'en' },
 ];
 const SITEMAP_PATH = path.join('main', 'sitemap.xml');
  

@@ -238,8 +238,8 @@
 
   <!-- Use cases: EN -->
   <url>
-    <loc>https://fusgement.com/en/cases-of-use.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/cases-of-use.html"/>
+    <loc>https://fusgement.com/en/use-cases.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/use-cases.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/casos-de-uso.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

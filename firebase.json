@@ -11,9 +11,8 @@
       { "source": "/en/contacto.html", "destination": "/en/contact.html", "type": 301 },
       { "source": "/en/ingenieria-electrica.html", "destination": "/en/electrical.html", "type": 301 },
       { "source": "/en/blog.html", "destination": "/en/blog/", "type": 301 },
-      { "source": "/es/blog.html", "destination": "/es/blog/", "type": 301 },
-      { "source": "/en/cases-of-use.html", "destination": "/en/use-cases.html", "type": 301 },
-      { "source": "/es/casos-de-uso.html", "destination": "/es/casos-de-uso.html", "type": 301 }
+      { "source": "/es/blog.html", "destination": "/es/blog/", "type": 301 }
+
     ],
     "ignore": [
       "firebase.json",

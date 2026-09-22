@@ -191,4 +191,58 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Blog: What is PMO (EN) -->
+  <url>
+    <loc>https://fusgement.com/en/blog/what-is-pmo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/what-is-pmo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/que-es-la-pmo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog: ¿Qué es la PMO? (ES) -->
+  <url>
+    <loc>https://fusgement.com/es/blog/que-es-la-pmo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/que-es-la-pmo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/what-is-pmo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog: Interview Alberto Trujillo (EN) -->
+  <url>
+    <loc>https://fusgement.com/en/blog/interview-alberto-trujillo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/interview-alberto-trujillo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/entrevista-alberto-trujillo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog: Entrevista Alberto Trujillo (ES) -->
+  <url>
+    <loc>https://fusgement.com/es/blog/entrevista-alberto-trujillo.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/entrevista-alberto-trujillo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/interview-alberto-trujillo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Use cases: ES -->
+  <url>
+    <loc>https://fusgement.com/es/casos-de-uso.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/casos-de-uso.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/cases-of-use.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Use cases: EN -->
+  <url>
+    <loc>https://fusgement.com/en/cases-of-use.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/cases-of-use.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/casos-de-uso.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

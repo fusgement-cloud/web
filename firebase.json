@@ -1,10 +1,25 @@
 {
   "hosting": {
     "public": "main",
+    "redirects": [
+      { "source": "/en/whoweare.html", "destination": "/en/aboutus.html", "type": 301 },
+      { "source": "/en/project-management.html", "destination": "/en/projectmanagement.html", "type": 301 },
+      { "source": "/en/electrical-engineering.html", "destination": "/en/electrical.html", "type": 301 },
+      { "source": "/en/direccion-de-proyectos.html", "destination": "/en/projectmanagement.html", "type": 301 },
+      { "source": "/en/quienes-somos.html", "destination": "/en/aboutus.html", "type": 301 },
+      { "source": "/en/ingenieria.html", "destination": "/en/engineering.html", "type": 301 },
+      { "source": "/en/contacto.html", "destination": "/en/contact.html", "type": 301 },
+      { "source": "/en/ingenieria-electrica.html", "destination": "/en/electrical.html", "type": 301 },
+      { "source": "/en/blog.html", "destination": "/en/blog/", "type": 301 },
+      { "source": "/es/blog.html", "destination": "/es/blog/", "type": 301 },
+      { "source": "/en/cases-of-use.html", "destination": "/en/use-cases.html", "type": 301 },
+      { "source": "/es/casos-de-uso.html", "destination": "/es/casos-de-uso.html", "type": 301 }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+      
     ]
   }
 }

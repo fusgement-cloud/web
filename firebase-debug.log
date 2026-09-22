@@ -1,0 +1,58 @@
+[debug] [2026-09-22T19:48:07.402Z] ----------------------------------------------------------------------
+[debug] [2026-09-22T19:48:07.407Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\patri\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2026-09-22T19:48:07.408Z] CLI Version:   15.13.0
+[debug] [2026-09-22T19:48:07.408Z] Platform:      win32
+[debug] [2026-09-22T19:48:07.408Z] Node Version:  v22.17.0
+[debug] [2026-09-22T19:48:07.409Z] Time:          Tue Sep 22 2026 21:48:07 GMT+0200 (hora de verano de Europa central)
+[debug] [2026-09-22T19:48:07.409Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-22T19:48:07.414Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-22T19:48:42.398Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-22T19:48:42.399Z] > authorizing via signed-in user (fusgement@fusgement.com)
+[debug] [2026-09-22T19:48:42.399Z] [iam] checking project fusgement-firebase for permissions ["firebase.projects.get"]
+[debug] [2026-09-22T19:48:42.401Z] Checked if tokens are valid: false, expires at: 1782832642508
+[debug] [2026-09-22T19:48:42.402Z] Checked if tokens are valid: false, expires at: 1782832642508
+[debug] [2026-09-22T19:48:42.402Z] > refreshing access token with scopes: []
+[debug] [2026-09-22T19:48:42.404Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-09-22T19:48:42.404Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-22T19:48:42.562Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-09-22T19:48:42.562Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-09-22T19:48:42.580Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase:testIamPermissions [none]
+[debug] [2026-09-22T19:48:42.580Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase:testIamPermissions  x-goog-user-project=fusgement-firebase
+[debug] [2026-09-22T19:48:42.580Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-09-22T19:48:42.671Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-22T19:48:42.672Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-22T19:48:43.361Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase:testIamPermissions 200
+[debug] [2026-09-22T19:48:43.361Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-09-22T19:48:43.364Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:43.364Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:43.364Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase [none]
+[debug] [2026-09-22T19:48:43.573Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase 200
+[debug] [2026-09-22T19:48:43.573Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/fusgement-firebase {"projectNumber":"340870246718","projectId":"fusgement-firebase","lifecycleState":"ACTIVE","name":"fusgement firebase","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-11-21T12:00:44.861504Z"}
+[info] 
+[info] === Serving from 'C:\Users\patri\Desktop\docs\emprendimiento\web\website_full es-en v5'...
+[info] 
+[debug] [2026-09-22T19:48:43.579Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:43.580Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:43.580Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/fusgement-firebase/sites 
+[debug] [2026-09-22T19:48:44.805Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/fusgement-firebase/sites 200
+[debug] [2026-09-22T19:48:44.805Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/fusgement-firebase/sites {"sites":[{"name":"projects/fusgement-firebase/sites/fusgement-firebase","defaultUrl":"https://fusgement-firebase.web.app","appId":"1:340870246718:web:06ba17262e08d03230fc6f","type":"DEFAULT_SITE"}]}
+[debug] [2026-09-22T19:48:44.805Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:44.805Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:44.805Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase/webApps/1:340870246718:web:06ba17262e08d03230fc6f/config [none]
+[debug] [2026-09-22T19:48:45.648Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase/webApps/1:340870246718:web:06ba17262e08d03230fc6f/config 200
+[debug] [2026-09-22T19:48:45.648Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase/webApps/1:340870246718:web:06ba17262e08d03230fc6f/config {"projectId":"fusgement-firebase","appId":"1:340870246718:web:06ba17262e08d03230fc6f","storageBucket":"fusgement-firebase.firebasestorage.app","apiKey":"AIzaSyBObXnSdd67Ku0CK4yWy1nHNdyn80FTBX8","authDomain":"fusgement-firebase.firebaseapp.com","messagingSenderId":"340870246718","measurementId":"G-48E8WRV4N5","projectNumber":"340870246718","version":"2"}
+[debug] [2026-09-22T19:48:45.686Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:45.686Z] Checked if tokens are valid: true, expires at: 1790110121562
+[debug] [2026-09-22T19:48:45.686Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase [none]
+[debug] [2026-09-22T19:48:45.993Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase 200
+[debug] [2026-09-22T19:48:45.993Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase {"projectId":"fusgement-firebase","projectNumber":"340870246718","displayName":"fusgement firebase","name":"projects/fusgement-firebase","resources":{"hostingSite":"fusgement-firebase"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_4ae0be71-6654-4658-bc11-f9e69ee2acca"}
+[info] i  hosting[fusgement-firebase]: Serving hosting files from: main {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mmain\u001b[22m"}}
+[info] +  hosting[fusgement-firebase]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:49 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:49 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:49 +0000] "GET /css/styles.css HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:49 +0000] \"GET /css/styles.css HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:49 +0000] "GET /images/fusgement-logo-cuadrado.png HTTP/1.1" 200 17798 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:49 +0000] \"GET /images/fusgement-logo-cuadrado.png HTTP/1.1\" 200 17798 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:50 +0000] "GET /images/coordinationandoptimization/coordination.png HTTP/1.1" 200 61388 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:50 +0000] \"GET /images/coordinationandoptimization/coordination.png HTTP/1.1\" 200 61388 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:50 +0000] "GET /images/coordinationandoptimization/optimization.png HTTP/1.1" 200 62212 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:50 +0000] \"GET /images/coordinationandoptimization/optimization.png HTTP/1.1\" 200 62212 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:50 +0000] "GET /images/pm/time_money_and_scope.png HTTP/1.1" 200 52975 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:50 +0000] \"GET /images/pm/time_money_and_scope.png HTTP/1.1\" 200 52975 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [22/Sep/2026:19:48:50 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [22/Sep/2026:19:48:50 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\""}}

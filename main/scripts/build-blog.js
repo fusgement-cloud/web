@@ -37,13 +37,15 @@ function categoryLabel(cat, lang) {
       'gestion-proyectos':    'Gestión de proyectos',
       'ingenieria-electrica': 'Ingeniería eléctrica',
       'ingenieria':           'Ingeniería',
-      'consultoria':          'Consultoría'
+      'consultoria':          'Consultoría',
+      'entrevista':           'Entrevista'
     },
     en: {
       'project-management':     'Project Management',
       'electrical-engineering': 'Electrical Engineering',
       'engineering':            'Engineering',
-      'consulting':             'Consulting'
+      'consulting':             'Consulting',
+      'interview':              'Interview'
     }
   };
   return (map[lang] && map[lang][cat]) || cat;
@@ -54,7 +56,7 @@ function header(lang) {
   return `<header class="site-header">
   <div class="header-inner">
     <div class="logo-area">
-      <img src="/images/fusgement logo6 fondo.png"
+      <img src="/images/fusgement-logo6-fondo.png"
            alt="Fusgement – ${es ? 'Gestión de proyectos e ingeniería eléctrica' : 'Project management and electrical engineering'}"
            class="logo">
       <div>
@@ -72,31 +74,28 @@ function header(lang) {
 
 function nav(lang) {
   const es = lang === 'es';
+  // Mismo menú (7 enlaces) que las páginas estáticas; "Blog" va marcado como activo.
   const links = es ? [
     ['/es/index.html','Inicio'],
     ['/es/direccion-de-proyectos.html','Dirección de proyectos'],
-    ['/es/ingenieria-electrica.html','Ingeniería eléctrica'],
-    ['/es/ingenieria.html','Ingeniería'],
-    ['/es/otros-servicios.html','Otros servicios'],
+    ['/es/ingenieria.html','Servicios de ingeniería'],
     ['/es/quienes-somos.html','Quiénes somos'],
     ['/es/clientes.html','Clientes'],
-    ['/es/contacto.html','Contacto'],
     ['/es/blog/','Blog'],
+    ['/es/contacto.html','Contacto'],
   ] : [
     ['/en/index.html','Home'],
     ['/en/projectmanagement.html','Project Management'],
-    ['/en/electrical.html','Electrical Engineering'],
-    ['/en/engineering.html','Engineering'],
-    ['/en/otherservices.html','Other Services'],
+    ['/en/engineering.html','Engineering Services'],
     ['/en/aboutus.html','About Us'],
     ['/en/customers.html','Clients'],
-    ['/en/contact.html','Contact'],
     ['/en/blog/','Blog'],
+    ['/en/contact.html','Contact'],
   ];
   return `<nav class="nav-bar" aria-label="${es ? 'Navegación principal' : 'Main navigation'}">
   <div class="nav-inner">
     ${links.map(([href,label]) =>
-      `<div class="nav-innerindividual"><a href="${href}">${label}</a></div>`
+      `<div class="nav-innerindividual"><a href="${href}"${href.endsWith('/blog/') ? ' class="active" aria-current="page"' : ''}>${label}</a></div>`
     ).join('\n    ')}
   </div>
 </nav>`;
@@ -169,7 +168,7 @@ function buildPost(postData, lang, outDir) {
   <link rel="canonical" href="${pageUrl}">
   <link rel="alternate" hreflang="${lang}" href="${pageUrl}">
   <link rel="alternate" hreflang="${altLang}" href="${altUrl}">
-  <link rel="alternate" hreflang="x-default" href="${SITE_URL}/es/blog/">
+  <link rel="alternate" hreflang="x-default" href="${es ? pageUrl : altUrl}">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/blog.css">
   <meta property="og:type" content="article">

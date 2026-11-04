@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Raíz (redirige a ES) -->
-  <url>
-    <loc>https://fusgement.com/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
   <!-- ES: Inicio -->
   <url>
     <loc>https://fusgement.com/es/index.html</loc>
@@ -90,15 +81,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/careers.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- ES: Legal -->
-  <url>
-    <loc>https://fusgement.com/es/legal.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/legal.html"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <!-- EN: Home -->
@@ -182,13 +164,22 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- EN: Legal -->
+  <!-- Blog: índice ES -->
   <url>
-    <loc>https://fusgement.com/en/legal.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/legal.html"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://fusgement.com/es/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: índice EN -->
+  <url>
+    <loc>https://fusgement.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Blog: What is PMO (EN) -->
@@ -231,7 +222,7 @@
   <url>
     <loc>https://fusgement.com/es/casos-de-uso.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://fusgement.com/es/casos-de-uso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/cases-of-use.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fusgement.com/en/use-cases.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

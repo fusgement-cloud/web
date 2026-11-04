@@ -179,7 +179,7 @@
 /* ── LISTADO DEL BLOG ── */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 1.2rem;
   margin-top: 0.5rem;
 }
@@ -254,4 +254,18 @@
   letter-spacing: 0.08em;
   color: var(--primary);
   margin-bottom: 0.4rem;
+}
+
+/* Móvil y accesibilidad */
+.breadcrumb { flex-wrap: wrap; }
+.post-content table { display: block; overflow-x: auto; }
+.post-content { overflow-wrap: break-word; }
+.post-content pre { max-width: 100%; }
+.breadcrumb { font-size: 0.88rem; }
+.post-category { font-size: 0.8rem; }
+@media (max-width: 700px) {
+  .post-author::before { content: ""; }
+  .post-meta { flex-wrap: wrap; row-gap: 0.4rem; }
+  .blog-card-body { padding: 1rem; }
+  .post-content { font-size: 1rem; line-height: 1.7; }
 }

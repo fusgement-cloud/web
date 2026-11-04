@@ -1,7 +1,7 @@
 ---
 title: "What is a PMO and when does your company need one"
 slug: "what-is-pmo"
-date: "2025-04-10"
+date: "2026-04-10"
 description: "A Project Management Office (PMO) standardises project management across an organisation. Find out when you need one and which type is right for your company."
 category: "project-management"
 author: "Alberto Trujillo Sanz"

@@ -26,6 +26,9 @@ jobs:
       - name: Generar páginas del blog
         run: node main/scripts/build-blog.js
 
+      - name: Actualizar sitemap con los posts nuevos
+        run: node generate-sitemap.js
+
       - name: Deploy a Firebase Hosting
         run: firebase deploy --only hosting
         env:

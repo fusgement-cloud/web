@@ -11,14 +11,22 @@
       { "source": "/en/contacto.html", "destination": "/en/contact.html", "type": 301 },
       { "source": "/en/ingenieria-electrica.html", "destination": "/en/electrical.html", "type": 301 },
       { "source": "/en/blog.html", "destination": "/en/blog/", "type": 301 },
-      { "source": "/es/blog.html", "destination": "/es/blog/", "type": 301 }
-
+      { "source": "/es/blog.html", "destination": "/es/blog/", "type": 301 },
+      { "source": "/en/cases-of-use.html", "destination": "/en/use-cases.html", "type": 301 },
+      { "source": "/es/servicios-de-ingenieria.html", "destination": "/es/ingenieria.html", "type": 301 },
+      { "source": "/en/engineering-services.html", "destination": "/en/engineering.html", "type": 301 },
+      { "source": "/es/blog/index.html", "destination": "/es/blog/", "type": 301 },
+      { "source": "/en/blog/index.html", "destination": "/en/blog/", "type": 301 },
+      { "source": "/index.html", "destination": "/es/index.html", "type": 301 },
+      { "source": "/es", "destination": "/es/index.html", "type": 301 },
+      { "source": "/es/", "destination": "/es/index.html", "type": 301 },
+      { "source": "/en", "destination": "/en/index.html", "type": 301 },
+      { "source": "/en/", "destination": "/en/index.html", "type": 301 }
     ],
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-      
     ]
   }
 }

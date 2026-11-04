@@ -1,7 +1,7 @@
 ---
 title: "Qué es la PMO y cuándo necesita su empresa una"
 slug: "que-es-la-pmo"
-date: "2025-04-10"
+date: "2026-04-10"
 description: "La PMO o Proyecto Management Office es la unidad que estandariza la gestión de proyectos en una organización. Descubra cuándo necesita una y qué tipos existen."
 category: "gestion-proyectos"
 author: "Alberto Trujillo Sanz"
@@ -9,7 +9,7 @@ published: true
 en_slug: "what-is-pmo"
 ---
 
-Una **Oficina de Gestión de Proyectos** (PMO, por sus siglas en inglés) es la unidad organizativa responsable de definir y mantener los estándares de gestión de proyectos dentro de una empresa. No gestiona proyectos directamente, sino que proporciona el marco, las herramientas y el soporte para que los equipos de proyecto trabajen de forma coherente y eficiente.
+Una **Oficina de Gestión de Proyectos** (PMO, por sus siglas en inglés) es la unidad organizativa responsable de definir y mantener los estándares de gestión de proyectos dentro de una empresa. Proporciona el marco, las herramientas y el soporte para que los equipos de proyecto trabajen de forma coherente y eficiente.
 
 ## ¿Por qué necesita su empresa una PMO?
 

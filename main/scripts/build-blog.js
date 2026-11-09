@@ -206,6 +206,7 @@ function buildPost(postData, lang, outDir) {
     ]
   }
   </script>
+  <script src="/js/consent.js" defer></script>
 </head>
 <body>
 ${header(lang)}
@@ -287,6 +288,7 @@ function buildIndex(posts, lang, outDir) {
   <link rel="alternate" hreflang="x-default" href="${SITE_URL}/es/blog/">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/blog.css">
+  <script src="/js/consent.js" defer></script>
 </head>
 <body>
 ${header(lang)}

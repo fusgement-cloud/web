@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Fusgement · CSS del índice (2026)
+   Sin dependencias, sin fuentes externas, sin JS para las animaciones.
+   Las variables con valor por defecto respetan las que ya tienes definidas.
+   ========================================================================== */
+
+:root {
+  --primary:     #0b2545;
+  --primary-700: #081a31;
+  --accent:      #f2b705;
+  --bg:          #ffffff;
+  --bg-soft:     color-mix(in srgb, var(--primary) 4%, var(--bg));
+  --text:        #1b2433;
+  --muted:       color-mix(in srgb, var(--text) 65%, var(--bg));
+  --line:        color-mix(in srgb, var(--primary) 14%, transparent);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius: 12px;
+  --wrap: 1120px;
+  --header-h: 64px;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+
+section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+
+/* Etiqueta pequeña sobre los títulos ("Servicios", "Clientes"...) */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .6rem;
+  margin: 0 0 1rem;
+  font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before { content: ""; width: 1.8rem; height: 2px; background: var(--accent); }
+
+h1, h2, h3 { line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; margin: 0 0 1rem; }
+h1 { font-size: clamp(2.2rem, 5.5vw + .5rem, 4.4rem); font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 3vw + .5rem, 2.8rem); font-weight: 750; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+p  { text-wrap: pretty; margin: 0 0 1rem; }
+
+/* ==========================================================================
+   Botones
+   ========================================================================== */
+.btn-cta, .btn-ghost {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.5rem; border-radius: 8px;
+  font-weight: 700; font-size: .95rem; text-decoration: none; white-space: nowrap;
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out), background .2s;
+}
+.btn-cta {
+  background: var(--accent); color: var(--primary-700);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.btn-cta:active { transform: translateY(0); }
+.btn-ghost { color: inherit; border: 1.5px solid currentColor; }
+.btn-ghost:hover { background: color-mix(in srgb, currentColor 10%, transparent); transform: translateY(-2px); }
+
+/* ==========================================================================
+   Cabecera fija con cristal
+   ========================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--header-h);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; color: var(--primary); }
+.brand img { width: 32px; height: 32px; }
+
+.site-nav { display: flex; align-items: center; gap: 1.6rem; }
+.site-nav a {
+  position: relative; text-decoration: none; font-size: .95rem; font-weight: 600; color: var(--text);
+  padding-block: .3rem;
+}
+.site-nav a::after {              /* subrayado que crece desde la izquierda */
+  content: ""; position: absolute; inset: auto 0 0 0; height: 2px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease-out);
+}
+.site-nav a:hover::after, .site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.site-nav .lang { border: 1px solid var(--line); border-radius: 6px; padding: .2rem .55rem; font-size: .8rem; }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex; align-items: center; padding: .45rem .9rem;
+    border: 1px solid var(--line); border-radius: 8px; background: transparent;
+    font: inherit; font-weight: 700; font-size: .8rem; letter-spacing: .08em; cursor: pointer;
+  }
+  .site-nav {
+    position: absolute; inset: var(--header-h) 0 auto 0;
+    flex-direction: column; align-items: stretch; gap: 0; padding: .5rem 1.25rem 1rem;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .site-nav a { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  .site-nav a::after { display: none; }
+  .site-header:has(.nav-toggle[aria-expanded="true"]) .site-nav { display: flex; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  color: #fff;
+  padding-block: clamp(4rem, 11vw, 8.5rem);
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+    radial-gradient(40rem 30rem at 0% 110%, color-mix(in srgb, #4aa3ff 22%, transparent), transparent 60%),
+    linear-gradient(160deg, var(--primary) 0%, var(--primary-700) 100%);
+}
+.hero::before {                     /* rejilla técnica muy sutil */
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image:
+    linear-gradient(rgb(255 255 255 / .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / .06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 20%, transparent 75%);
+}
+.hero .eyebrow { color: color-mix(in srgb, #fff 70%, transparent); }
+.hero h1 { max-width: 18ch; }
+.hero h1 em {
+  font-style: normal; color: var(--accent);
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 55%, #fff));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero .lead { max-width: 60ch; font-size: clamp(1.05rem, 1vw + .9rem, 1.3rem); color: color-mix(in srgb, #fff 82%, transparent); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .6rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+.chips li {
+  padding: .4rem .9rem; font-size: .85rem; border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / .22); background: rgb(255 255 255 / .06);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+
+/* ==========================================================================
+   "La fusión": 4 pilares numerados
+   ========================================================================== */
+.fusion-intro { max-width: 52rem; margin-bottom: 3rem; }
+.fusion-intro strong { color: var(--primary); }
+
+.pilares { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; counter-reset: pilar; }
+.pilar {
+  position: relative; padding: 1.6rem 1.4rem; border-radius: var(--radius);
+  background: var(--bg-soft); border: 1px solid var(--line);
+  transition: transform .35s var(--ease-out), border-color .35s, background .35s;
+}
+.pilar:hover { transform: translateY(-4px); border-color: var(--accent); background: var(--bg); }
+.pilar .num {
+  display: block; margin-bottom: .8rem;
+  font-size: 2.4rem; font-weight: 800; line-height: 1; letter-spacing: -.04em;
+  color: color-mix(in srgb, var(--primary) 18%, transparent);
+  transition: color .35s;
+}
+.pilar:hover .num { color: var(--accent); }
+.pilar p { color: var(--muted); font-size: .98rem; margin: 0; }
+
+/* ==========================================================================
+   Servicios: subgrid para alinear título / texto / enlace entre tarjetas
+   ========================================================================== */
+.servicios { background: var(--bg-soft); }
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.5rem;
+}
+.servicio-card {
+  display: grid;
+  grid-row: span 4;                 /* top · título · texto · flecha */
+  grid-template-rows: subgrid;
+  row-gap: .6rem;
+  position: relative; overflow: hidden;
+  padding: 1.4rem;
+  background: var(--bg); color: var(--text); text-decoration: none;
+  border-radius: var(--radius); border-top: 4px solid var(--primary);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--primary) 10%, transparent);
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out), opacity .35s, border-color .25s;
+}
+.servicio-card__top { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+.servicio-card__num { font-weight: 800; font-size: 1.1rem; color: var(--primary); }
+.servicio-card__tag {
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: .15rem .55rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 25%, transparent); color: var(--primary-700);
+}
+.servicio-card h3 { margin: 0; align-self: start; }
+.servicio-card p  { margin: 0; color: var(--muted); font-size: .96rem; align-self: start; }
+.servicio-card__go {
+  align-self: end; justify-self: end; font-size: 1.4rem; font-weight: 700; color: var(--primary);
+  transition: transform .35s var(--ease-out);
+}
+.servicio-card:hover {
+  transform: translateY(-4px);
+  border-top-color: var(--accent);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+.servicio-card:hover .servicio-card__go { transform: translate(4px, -4px); }
+
+/* Foco contextual: atenúa las demás tarjetas (solo con ratón) */
+@media (hover: hover) {
+  .servicios-grid:has(.servicio-card:hover) .servicio-card:not(:hover) { opacity: .6; transform: scale(.985); }
+}
+
+/* ==========================================================================
+   Clientes
+   ========================================================================== */
+.clientes-layout { display: grid; gap: 3rem; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .clientes-layout { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+
+.logos { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+.logos li {
+  padding: .6rem 1.1rem; border: 1px solid var(--line); border-radius: 8px;
+  font-weight: 700; color: var(--muted);
+  transition: color .25s, border-color .25s, transform .25s var(--ease-out);
+}
+.logos li:hover { color: var(--primary); border-color: var(--accent); transform: translateY(-2px); }
+
+.perfiles { margin: 0; padding: 0; list-style: none; display: grid; gap: .2rem; }
+.perfiles li {
+  position: relative; padding: .85rem 0 .85rem 2rem; border-bottom: 1px solid var(--line);
+}
+.perfiles li::before {
+  content: ""; position: absolute; left: 0; top: 1.25rem; width: 1rem; height: 2px; background: var(--accent);
+  transition: width .3s var(--ease-out);
+}
+.perfiles li:hover::before { width: 1.4rem; }
+
+.link-arrow { font-weight: 700; color: var(--primary); text-decoration: none; }
+.link-arrow:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ==========================================================================
+   Por qué Fusgement: cifra grande + cinta de normativas
+   ========================================================================== */
+.porque { background: var(--primary); color: #fff; overflow: hidden; }
+.porque .eyebrow { color: color-mix(in srgb, #fff 65%, transparent); }
+.stat { display: grid; gap: 1rem 3rem; align-items: center; }
+@media (min-width: 800px) { .stat { grid-template-columns: auto 1fr; } }
+.stat-num {
+  font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; line-height: .9; letter-spacing: -.05em;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.stat-label { font-weight: 700; margin: 0 0 .5rem; }
+.stat p { color: color-mix(in srgb, #fff 78%, transparent); max-width: 60ch; }
+
+.marquee {
+  margin-top: 3rem; padding-block: 1.1rem; overflow: hidden;
+  border-block: 1px solid rgb(255 255 255 / .15);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: flex; width: max-content; gap: 2.5rem; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span { white-space: nowrap; font-weight: 600; opacity: .8; }
+.marquee-track span::after { content: "·"; margin-left: 2.5rem; color: var(--accent); }
+@keyframes marquee { to { transform: translateX(calc(-50% - 1.25rem)); } }  /* el contenido va duplicado */
+
+/* ==========================================================================
+   Contacto + pie
+   ========================================================================== */
+.contacto { text-align: center; background: var(--bg-soft); }
+.contacto h2 { max-width: 22ch; margin-inline: auto; }
+.contacto p { color: var(--muted); }
+.contacto-actions { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; justify-content: center; align-items: center; margin-top: 1.5rem; }
+
+.site-footer { background: var(--primary-700); color: color-mix(in srgb, #fff 78%, transparent); padding-block: 3.5rem 2rem; font-size: .95rem; }
+.footer-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.site-footer h4 { margin: 0 0 .8rem; color: #fff; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+.site-footer a { display: block; padding-block: .2rem; text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+.footer-legal { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgb(255 255 255 / .12); font-size: .85rem; }
+.footer-legal a { display: inline; }
+
+/* Las secciones que quedan lejos del primer pantallazo no se pintan hasta acercarse */
+.clientes, .porque, .contacto, .site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
+}
+
+/* ==========================================================================
+   Movimiento: solo si el navegador lo soporta y el usuario no lo ha limitado
+   ========================================================================== */
+@view-transition { navigation: auto; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-in  { from { opacity: 0; } }
+  @keyframes fade-out { to   { opacity: 0; } }
+  ::view-transition-old(root) { animation: 160ms cubic-bezier(.4, 0, 1, 1) both fade-out; }
+  ::view-transition-new(root) { animation: 240ms cubic-bezier(0, 0, .2, 1) both fade-in; }
+
+  @supports (animation-timeline: view()) {
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .pilar, .servicio-card, .logos li, .perfiles li, .stat, .contacto .wrap {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    /* Pequeño escalonado entre hermanas sin JS */
+    .pilar:nth-child(2), .servicio-card:nth-child(2) { animation-range: entry 6% entry 61%; }
+    .pilar:nth-child(3), .servicio-card:nth-child(3) { animation-range: entry 12% entry 67%; }
+    .pilar:nth-child(4), .servicio-card:nth-child(4) { animation-range: entry 18% entry 73%; }
+
+    /* Barra de progreso de lectura bajo la cabecera */
+    @keyframes progress { to { transform: scaleX(1); } }
+    .site-header::after {
+      content: ""; position: absolute; inset: auto 0 -1px 0; height: 3px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      animation: progress linear both; animation-timeline: scroll(root);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}

@@ -1,0 +1,210 @@
+/* Fusgement · índice 2026 (v2). Cargar DESPUÉS de styles.css. Requiere el index.html adjunto. */
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+:root{--ease-out:cubic-bezier(.16,1,.3,1);--sh-sm:0 1px 2px color-mix(in srgb,var(--text) 8%,transparent);--sh-md:0 14px 34px color-mix(in srgb,var(--primary) 18%,transparent);--card-pad:18px}
+@media(max-width:700px){:root{--card-pad:14px}}
+html{scrollbar-color:var(--primary) var(--bg)}
+::selection{background:var(--accent);color:var(--primary-700)}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.content p{text-wrap:pretty}
+.content h2{font-size:clamp(1.45rem,1.3vw + 1rem,2.1rem);letter-spacing:-.015em;text-wrap:balance}
+.section-label::before{content:"";display:inline-block;width:1.6rem;height:2px;margin-right:.6rem;vertical-align:middle;background:var(--accent)}
+
+/* ---------- HERO oscuro a sangre dentro de la tarjeta ---------- */
+.hero-head{position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  margin:calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) 1.6rem;
+  padding:clamp(1.8rem,5vw,3.6rem) clamp(1.2rem,3.5vw,2.8rem);border-radius:10px 10px 0 0;
+  background:radial-gradient(46rem 22rem at 92% -20%,color-mix(in srgb,var(--accent) 28%,transparent),transparent 60%),
+             radial-gradient(34rem 22rem at -5% 120%,color-mix(in srgb,#4aa3ff 26%,transparent),transparent 60%),
+             linear-gradient(150deg,var(--primary) 0%,var(--primary-700) 100%)}
+.hero-head::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;
+  background-image:linear-gradient(rgb(255 255 255/.07) 1px,transparent 1px),linear-gradient(90deg,rgb(255 255 255/.07) 1px,transparent 1px);
+  background-size:52px 52px;mask-image:radial-gradient(ellipse at 25% 40%,#000 15%,transparent 75%)}
+.hero-head .eyebrow{margin:0 0 1rem;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgb(255 255 255/.7)}
+.hero-head h1{color:#fff;margin:0;max-width:22ch;font-size:clamp(1.8rem,3.6vw + .6rem,3.4rem);line-height:1.08;letter-spacing:-.025em;text-wrap:balance}
+.hero-head h1::after{content:"";display:block;width:72px;height:4px;margin-top:1.1rem;border-radius:2px;background:var(--accent)}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes rise{from{opacity:0;translate:0 18px}}
+  .hero-head>*{animation:rise .9s var(--ease-out) backwards}
+  .hero-head h1{animation-delay:.1s}
+}
+
+/* ---------- Hero: imágenes y propuesta de valor ---------- */
+.section-with-image .content-image-big{margin:0;display:grid;gap:1rem;align-content:start}
+.section-with-image .content-image-big img{background:#fff;border:1px solid var(--border);box-shadow:var(--sh-sm);transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.pill{transition:transform .3s var(--ease-out)}
+.valor-grid{counter-reset:valor}
+.valor-item{counter-increment:valor;transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out),border-color .25s,background .25s}
+.valor-item strong::before{content:counter(valor,decimal-leading-zero);display:inline-block;margin-right:.55rem;font-size:.78rem;font-weight:800;letter-spacing:.06em;color:#8a5a00}
+
+/* ---------- Servicios ---------- */
+.servicios-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));counter-reset:sc}
+.servicio-card{counter-increment:sc;isolation:isolate;box-shadow:var(--sh-sm)}
+.servicio-card .sc-label::before{content:counter(sc,decimal-leading-zero) " · "}
+.servicio-card h3{font-size:1.05rem}
+.servicio-card .sc-arrow{transition:transform .35s var(--ease-out)}
+.servicio-card.destacado{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 12%,#fff),var(--bg) 70%)}
+/* foco de luz que sigue al cursor (variables --mx/--my las pone el script) */
+.servicio-card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 26%,transparent),transparent 65%)}
+/* anillo dorado giratorio en las tarjetas destacadas */
+.servicio-card.destacado::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:conic-gradient(from var(--ang),transparent 60%,var(--accent) 85%,transparent);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+@supports(grid-template-rows:subgrid){
+  .servicios-grid .servicio-card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:.35rem;transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out),opacity .3s}
+  .servicio-card h3,.servicio-card p{align-self:start}
+  .servicio-card .sc-arrow{align-self:end;justify-self:start}
+}
+@media(hover:hover){
+  .servicios-grid .servicio-card:hover{transform:translateY(-5px);box-shadow:var(--sh-md)}
+  .servicio-card:hover::before,.servicio-card.destacado:hover::after{opacity:1}
+  .servicio-card:hover .sc-arrow{transform:translateX(5px)}
+  .servicios-grid:has(.servicio-card:hover) .servicio-card:not(:hover){opacity:.6;transform:scale(.985)}
+  .valor-item:hover{transform:translateY(-3px);border-left-color:var(--primary);box-shadow:var(--sh-md);background:#fff}
+  .section-with-image .content-image-big img:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--sh-md)}
+  .pill:hover{transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes spin{to{--ang:360deg}}
+  .servicio-card.destacado::after{animation:spin 5s linear infinite}
+}
+
+/* ---------- Clientes ---------- */
+.cliente-tipo{background:#fff;transition:transform .3s var(--ease-out),border-color .25s,box-shadow .3s var(--ease-out)}
+.cliente-tipo::before{transition:transform .3s var(--ease-out)}
+@media(hover:hover){.cliente-tipo:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:var(--sh-sm)}.cliente-tipo:hover::before{transform:scale(1.3)}}
+
+/* ---------- Por qué Fusgement ---------- */
+.dif-box{background:linear-gradient(135deg,var(--primary),var(--primary-700));border:0;color:#fff;margin-top:1.5rem;box-shadow:var(--sh-md);padding:clamp(1.4rem,3vw,2.4rem);position:relative;overflow:hidden;isolation:isolate}
+.dif-box::before{content:"";position:absolute;z-index:-1;top:-40%;left:50%;width:520px;height:520px;translate:-50% 0;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 22%,transparent),transparent)}
+.dif-num{font-size:clamp(3rem,8vw,5.4rem);line-height:1;letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums}
+.dif-lbl{font-size:.95rem;color:rgb(255 255 255/.8);margin-bottom:1rem}
+.dif-sep{border-top-color:rgb(255 255 255/.2);margin:1.1rem 0}
+.norm-title{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(255 255 255/.7);margin-bottom:.7rem;text-align:center}
+.norm-pill{white-space:nowrap;background:rgb(255 255 255/.1);color:#fff;border-color:rgb(255 255 255/.25);padding:.25rem .8rem;font-size:.82rem;transition:background .25s,color .25s}
+.norm-pill:hover{background:var(--accent);color:var(--primary-700);border-color:var(--accent)}
+/* cinta infinita (el HTML duplica las etiquetas) */
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.marquee-track{display:flex;gap:.5rem;width:max-content;animation:marquee 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(calc(-50% - .25rem))}}
+@media(prefers-reduced-motion:reduce){.marquee{mask-image:none}.marquee-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.marquee [aria-hidden]{display:none}}
+
+/* ---------- CTA ---------- */
+.cta-band{position:relative;overflow:hidden;isolation:isolate;padding:clamp(1.4rem,3vw,2.2rem)}
+.cta-band::before{content:"";position:absolute;z-index:-1;top:-60%;right:-8%;width:400px;height:400px;pointer-events:none;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 40%,transparent),transparent)}
+.btn-cta{position:relative;overflow:hidden;box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 35%,transparent);transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+.btn-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgb(255 255 255/.6) 50%,transparent 70%);transform:translateX(-130%);transition:transform .7s var(--ease-out)}
+.btn-cta:hover{opacity:1;transform:translateY(-2px);box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 55%,transparent)}
+.btn-cta:hover::after{transform:translateX(130%)}
+.btn-cta:active{transform:none}
+
+/* ---------- Aparición al hacer scroll (translate, sin fill hacia delante) ---------- */
+@media(prefers-reduced-motion:no-preference){
+  @supports(animation-timeline:view()){
+    @keyframes reveal{from{opacity:0;translate:0 26px}}
+    .section-label,.content h2,.valor-item,.servicio-card,.cliente-tipo,.dif-box,.cta-band,.section-with-image .content-image-big img{
+      animation:reveal linear backwards;animation-timeline:view();
+      animation-range:entry calc(var(--i,0)*6%) entry calc(55% + var(--i,0)*6%)}
+    :is(.valor-item,.servicio-card,.cliente-tipo):nth-child(4n+2){--i:1}
+    :is(.valor-item,.servicio-card,.cliente-tipo):nth-child(4n+3){--i:2}
+    :is(.valor-item,.servicio-card,.cliente-tipo):nth-child(4n+4){--i:3}
+  }
+}
+
+/* ---------- GLOBAL (mover a styles.css para todas las páginas) ---------- */
+.nav-bar{position:relative}
+@media(min-width:701px){.nav-bar{position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgb(8 48 121/.25)}html{scroll-padding-top:64px}}
+@media(min-width:800px){.aside{top:72px}}
+@media(min-width:701px) and (prefers-reduced-motion:no-preference){
+  @supports(animation-timeline:scroll()){
+    @keyframes read{to{transform:scaleX(1)}}
+    .nav-bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;animation:read linear both;animation-timeline:scroll(root)}
+  }
+}
+@media(prefers-reduced-motion:no-preference){@view-transition{navigation:auto}.site-header{view-transition-name:site-header}.nav-bar{view-transition-name:site-nav}}
+
+/* ==========================================================================
+   v3 · MARKETING. Naranja = acción (CTA), azul = confianza, cian = apoyo.
+   ========================================================================== */
+@property --num{syntax:"<integer>";inherits:false;initial-value:0}
+:root{--cta:#ff7a1a;--cta-2:#ffb703;--ink:#050f24;--cta-grad:linear-gradient(135deg,#ff6a00,#ffb703)}
+
+/* Hero: más profundidad, titular mayor, frase clave animada y CTAs */
+.hero-head{background:
+  radial-gradient(40rem 20rem at 96% -10%,rgb(255 122 26/.38),transparent 60%),
+  radial-gradient(34rem 22rem at 0 112%,rgb(34 211 238/.22),transparent 60%),
+  radial-gradient(30rem 20rem at 55% 45%,rgb(47 107 255/.32),transparent 65%),
+  linear-gradient(150deg,#0b2a66 0%,var(--ink) 100%);padding-block:clamp(2.4rem,6vw,4.6rem)}
+.hero-head h1{font-size:clamp(2rem,4.6vw + .6rem,4.3rem);max-width:20ch;line-height:1.05}
+.hero-head h1::after{background:var(--cta-grad);width:96px}
+.hero-head h1 em{font-style:normal;background:linear-gradient(90deg,#ffb703,#ff7a1a,#ffd36b,#ffb703);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+@media(prefers-reduced-motion:no-preference){@keyframes shimmer{to{background-position:200% 0}}.hero-head h1 em{animation:shimmer 7s linear infinite}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.9rem}
+.hero-cta .btn-cta{display:inline-flex;align-items:center;padding:.95rem 1.9rem;font-size:1.05rem;background:var(--cta-grad);box-shadow:0 8px 28px rgb(255 106 0/.45)}
+.btn-ghost{display:inline-flex;align-items:center;padding:.95rem 1.7rem;border:1.5px solid rgb(255 255 255/.4);border-radius:8px;color:#fff;font-weight:700;text-decoration:none;transition:background .25s,border-color .25s,transform .25s var(--ease-out)}
+.btn-ghost:hover{background:rgb(255 255 255/.12);border-color:#fff;transform:translateY(-2px)}
+.hero-trust{margin:1.7rem 0 0;max-width:62ch;font-size:.9rem;color:rgb(255 255 255/.72)}
+.hero-trust strong{color:#fff;font-weight:700}
+
+/* Texto de apertura legible (antes 0.95rem en gris claro) */
+.lead{font-size:clamp(1.05rem,.5vw + .95rem,1.25rem);line-height:1.7;color:var(--text);margin:0 0 1.2rem}
+
+/* Más aire entre secciones (el HTML trae margin inline; por eso !important) */
+.content>section{margin-top:clamp(2.6rem,5vw,4.6rem)!important}
+.content h2{font-size:clamp(1.7rem,2vw + 1rem,2.7rem);line-height:1.1}
+.section-label{color:#c2410c}.section-label::before{background:var(--cta-grad);width:2rem;height:3px;border-radius:2px}
+
+/* Propuesta de valor: número-marca de agua grande */
+.valor-item{position:relative;overflow:hidden;background:#fff;border:1px solid var(--border);border-left:4px solid var(--cta)}
+.valor-item strong::before{display:none}
+.valor-item::after{content:counter(valor,decimal-leading-zero);position:absolute;right:.7rem;top:-.1rem;font-size:3rem;font-weight:800;line-height:1;color:color-mix(in srgb,var(--primary) 8%,transparent)}
+.valor-item strong{font-size:1.02rem}
+
+/* Franja de cifras con contadores animados */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.stat{background:#fff;padding:1.5rem 1.2rem;text-align:center}
+.stat-num{font-size:clamp(2.4rem,5vw,3.7rem);font-weight:800;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;
+  background:linear-gradient(135deg,var(--primary),#2f6bff 55%,var(--cta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-num small{font-size:.55em;font-weight:700;margin:0 .1em}
+.stat-lbl{margin-top:.55rem;font-size:.86rem;line-height:1.35;color:var(--muted)}
+.count{--num:var(--to,0);counter-reset:num var(--num)}
+.count::after{content:counter(num)}
+@media(prefers-reduced-motion:no-preference){@supports(animation-timeline:view()){
+  @keyframes count{from{--num:0}}
+  .count{animation:count linear backwards;animation-timeline:view();animation-range:entry 10% entry 90%}}}
+
+/* Servicios: los 2 principales en oscuro (jerarquía), el resto en claro */
+.servicios-grid .servicio-card.destacado{background:linear-gradient(160deg,#0f4fc0 0%,#0a2a68 55%,var(--ink) 100%);color:#fff;border-top-color:var(--cta);box-shadow:0 10px 30px rgb(8 48 121/.3)}
+.servicios-grid .servicio-card.destacado h3{color:#fff;font-size:1.2rem}
+.servicios-grid .servicio-card.destacado p{color:rgb(255 255 255/.8)}
+.servicios-grid .servicio-card.destacado .sc-label,.servicios-grid .servicio-card.destacado .sc-arrow{color:var(--cta-2)}
+.servicio-card .sc-arrow{color:#c2410c;font-size:.9rem}
+.servicio-card:not(.destacado){background:#fff;border:1px solid var(--border);border-top:4px solid var(--primary)}
+
+/* Caja de cifra y CTA final con más contraste */
+.dif-num{background:var(--cta-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dif-box::before{background:radial-gradient(closest-side,rgb(255 122 26/.28),transparent)}
+.cta-band{background:var(--cta-grad);color:var(--ink);padding:clamp(1.8rem,4vw,3rem);border-radius:16px;box-shadow:0 16px 40px rgb(255 106 0/.3)}
+.cta-band::before{background:radial-gradient(closest-side,rgb(255 255 255/.45),transparent);top:-70%;right:20%}
+.cta-band p{color:var(--ink);font-size:clamp(1.25rem,2.2vw,1.9rem);line-height:1.2;font-weight:800}
+.cta-band span{color:rgb(5 15 36/.78);font-size:1rem;font-weight:500;margin-top:.5rem}
+.cta-band .btn-cta{background:var(--ink);color:#fff;padding:1rem 2rem;font-size:1.05rem;box-shadow:0 8px 22px rgb(5 15 36/.35)}
+.cta-band .btn-cta::after{background:linear-gradient(110deg,transparent 30%,rgb(255 255 255/.35) 50%,transparent 70%)}
+
+/* Botón flotante: aparece al bajar 400 px (solo CSS) */
+.fab-cta{position:fixed;right:1rem;bottom:1rem;z-index:900;display:inline-flex;align-items:center;padding:.85rem 1.4rem;border-radius:999px;background:var(--cta-grad);color:var(--ink);font-weight:800;text-decoration:none;box-shadow:0 10px 28px rgb(255 106 0/.5);transition:transform .25s var(--ease-out)}
+.fab-cta:hover{transform:translateY(-3px)}
+@media print{.fab-cta{display:none}}
+@media(prefers-reduced-motion:no-preference){@supports(animation-timeline:scroll()){
+  @keyframes fab{from{opacity:0;translate:0 20px;visibility:hidden}to{opacity:1;translate:none;visibility:visible}}
+  .fab-cta{animation:fab linear both;animation-timeline:scroll(root);animation-range:400px 700px}}}
+
+/* ==========================================================================
+   v4 · ajustes acordados: 3 cifras, botón flotante solo en móvil/tablet,
+   tarjeta lateral con menos peso visual
+   ========================================================================== */
+.stats{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(min-width:800px){.fab-cta{display:none}}   /* en escritorio ya hay nav fija + tarjeta lateral */
+.aside.card.small h2{font-size:1rem;margin:0 0 .4rem;letter-spacing:0;color:var(--primary-700)}
+.aside.card.small p a{font-size:.88rem}

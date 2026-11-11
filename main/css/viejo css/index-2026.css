@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Fusgement · mejoras del índice (2026)
+   Se carga DESPUÉS de styles.css, solo en es/index.html y en/index.html:
+     <link rel="stylesheet" href="../css/styles.css">
+     <link rel="stylesheet" href="../css/index-2026.css">
+   No requiere cambios en el HTML. Usa tus clases y tus variables.
+   ========================================================================== */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-sm: 0 1px 2px color-mix(in srgb, var(--text) 8%, transparent);
+  --shadow-md: 0 12px 30px color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+/* ==========================================================================
+   Títulos
+   ========================================================================== */
+.content > h1 {
+  font-size: clamp(1.75rem, 3.2vw + .6rem, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+  text-wrap: balance;
+  margin-bottom: 1.4rem;
+}
+.content > h1::after {
+  content: "";
+  display: block;
+  width: 64px; height: 4px;
+  margin-top: .9rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.content h2 {
+  font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.content p { text-wrap: pretty; }
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem; height: 2px;
+  margin-right: .6rem;
+  vertical-align: middle;
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   Hero: imágenes y propuesta de valor
+   ========================================================================== */
+.section-with-image .content-image-big {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+.section-with-image .content-image-big img {
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
+}
+
+/* Numeración automática 01–04 (contador CSS, sin tocar el HTML) */
+.valor-grid { counter-reset: valor; }
+.valor-item {
+  counter-increment: valor;
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .25s;
+}
+.valor-item strong::before {
+  content: counter(valor, decimal-leading-zero);
+  display: inline-block;
+  margin-right: .55rem;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: #8a5a00;
+}
+
+/* ==========================================================================
+   Servicios
+   ========================================================================== */
+.servicios-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  counter-reset: sc;
+}
+.servicio-card { counter-increment: sc; box-shadow: var(--shadow-sm); }
+.servicio-card .sc-label::before { content: counter(sc, decimal-leading-zero) " · "; }
+.servicio-card h3 { font-size: 1.05rem; }
+.servicio-card .sc-arrow { transition: transform .35s var(--ease-out); }
+.servicio-card.destacado {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 12%, #fff), var(--bg) 70%);
+}
+
+/* Subgrid: etiqueta / título / texto / enlace quedan alineados entre tarjetas */
+@supports (grid-template-rows: subgrid) {
+  .servicios-grid .servicio-card {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: .35rem;
+    transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out), opacity .3s;
+  }
+  .servicio-card h3,
+  .servicio-card p { align-self: start; }
+  .servicio-card .sc-arrow { align-self: end; justify-self: start; }
+}
+
+/* Solo con ratón: en táctil se mantiene tu regla (hover:none) de styles.css */
+@media (hover: hover) {
+  .servicios-grid .servicio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .servicio-card:hover .sc-arrow { transform: translateX(4px); }
+  /* Foco contextual: las demás tarjetas se atenúan */
+  .servicios-grid:has(.servicio-card:hover) .servicio-card:not(:hover) { opacity: .6; transform: scale(.985); }
+
+  .valor-item:hover { transform: translateY(-3px); border-left-color: var(--primary); box-shadow: var(--shadow-md); }
+  .section-with-image .content-image-big img:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+}
+
+/* ==========================================================================
+   Clientes
+   ========================================================================== */
+.cliente-tipo {
+  background: #fff;
+  transition: transform .3s var(--ease-out), border-color .25s, box-shadow .3s var(--ease-out);
+}
+.cliente-tipo::before { transition: transform .3s var(--ease-out); }
+@media (hover: hover) {
+  .cliente-tipo:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow-sm); }
+  .cliente-tipo:hover::before { transform: scale(1.25); }
+}
+
+/* ==========================================================================
+   Por qué Fusgement: caja de cifra destacada (versión oscura)
+   ========================================================================== */
+.dif-box {
+  background: linear-gradient(135deg, var(--primary), var(--primary-700));
+  border: 0;
+  color: #fff;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+.dif-num {
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.dif-lbl { font-size: .95rem; color: rgb(255 255 255 / .8); margin-bottom: 1rem; }
+.dif-sep { border-top-color: rgb(255 255 255 / .2); margin: 1rem 0; }
+.norm-title { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgb(255 255 255 / .7); margin-bottom: .6rem; }
+.norm-pills { gap: .45rem; }
+.norm-pill {
+  background: rgb(255 255 255 / .1);
+  color: #fff;
+  border-color: rgb(255 255 255 / .25);
+  padding: .2rem .65rem;
+  transition: background .25s, color .25s, transform .3s var(--ease-out);
+}
+@media (hover: hover) {
+  .norm-pill:hover { background: var(--accent); color: var(--primary-700); border-color: var(--accent); transform: translateY(-2px); }
+}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+.cta-band { position: relative; overflow: hidden; isolation: isolate; }
+.cta-band::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -60%; right: -8%;
+  width: 380px; height: 380px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 38%, transparent), transparent);
+  pointer-events: none;
+}
+.btn-cta {
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 35%, transparent);
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out);
+}
+.btn-cta:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.btn-cta:active { transform: translateY(0); }
+
+/* ==========================================================================
+   Aparición al hacer scroll (CSS puro, solo si el navegador lo soporta)
+   Se anima `translate` (no `transform`) y sin fill hacia delante, para no
+   pisar los efectos hover. Con prefers-reduced-motion no se aplica.
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes reveal {
+      from { opacity: 0; translate: 0 24px; }
+    }
+    .valor-item,
+    .servicio-card,
+    .cliente-tipo,
+    .dif-box,
+    .cta-band,
+    .section-with-image .content-image-big img {
+      animation: reveal linear backwards;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 6%) entry calc(55% + var(--i, 0) * 6%);
+    }
+    /* Escalonado entre hermanos */
+    :is(.valor-item, .servicio-card, .cliente-tipo):nth-child(4n + 2) { --i: 1; }
+    :is(.valor-item, .servicio-card, .cliente-tipo):nth-child(4n + 3) { --i: 2; }
+    :is(.valor-item, .servicio-card, .cliente-tipo):nth-child(4n + 4) { --i: 3; }
+  }
+}
+
+/* ==========================================================================
+   GLOBAL — conviene mover este bloque a styles.css para que todas las páginas
+   (y no solo el índice) compartan cabecera, barra y transición.
+   ========================================================================== */
+
+/* Tipografía del sistema (Inter no se carga en ningún sitio; hoy cae a Arial) */
+body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+
+/* Barra de navegación fija en pantallas grandes (en móvil ocuparía demasiado) */
+.nav-bar { position: relative; }
+@media (min-width: 701px) {
+  .nav-bar { position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 10px rgb(8 48 121 / .25); }
+  html { scroll-padding-top: 64px; }
+}
+@media (min-width: 800px) {
+  .aside { top: 72px; }   /* la barra lateral no queda tapada por la nav fija */
+}
+
+/* Barra de progreso de lectura bajo la navegación */
+@media (min-width: 701px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    @keyframes read-progress { to { transform: scaleX(1); } }
+    .nav-bar::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: read-progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+/* Transición suave entre páginas; cabecera y nav se mantienen fijas.
+   Requiere que ambas páginas tengan esta regla. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: site-header; }
+  .nav-bar { view-transition-name: site-nav; }
+}

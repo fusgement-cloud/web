@@ -9,7 +9,97 @@
   <link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html">
   <link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html">
   <link rel="alternate" hreflang="x-default" href="https://fusgement.com/es/index.html">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index-2026.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    /* Compact navigation */
+    .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #dde4ef;box-shadow:0 1px 3px rgba(11,37,69,.04);padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    .header-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;width:min(100% - clamp(1rem,3vw,2.5rem),1200px);min-height:clamp(60px,7vh,72px);margin:0 auto}
+    .logo-area{display:flex;align-items:center;gap:12px;min-width:0;flex:0 1 auto;text-decoration:none}
+    .logo-area .logo{height:clamp(38px,5vh,46px);width:auto;border-radius:6px;background:#fff}
+    .brand-text{display:flex;flex-direction:column}
+    .brand-text .lema{font-weight:800;font-size:clamp(.95rem,1.2vw + .5rem,1.15rem);line-height:1.1;color:#083079;letter-spacing:-.02em}
+    .sub-lema{margin-top:2px;color:#c2410c;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:.3rem;order:3;flex:1 1 100%;min-width:0;overflow-x:auto;padding:.2rem 0;scrollbar-width:thin}
+    .nav-link{display:inline-flex;min-height:44px;align-items:center;flex:0 0 auto;padding:.4rem .55rem;color:#334155;font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s ease}
+    .nav-link:hover,.nav-link.active{color:#0b3d91}
+    .nav-link.active{font-weight:700}
+    .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+    .lang-switch{display:flex;align-items:center;padding:3px;border:1px solid #dde4ef;border-radius:8px;background:#f1f5f9}
+    .lang-switch .lang-btn{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border:0;border-radius:6px;background:transparent;color:#64748b;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .15s ease}
+    .lang-switch .lang-btn:hover{color:#0b2545}
+    .lang-switch .lang-btn.active{background:#0b3d91;color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .lang-sub{font-size:9px;opacity:.8}
+    .btn-navbar-cta{display:none;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;background:linear-gradient(90deg,#ffb703,#ff7a1a);color:#081a31;font-size:.78rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .15s ease,filter .15s ease}
+    .btn-navbar-cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .site-header :focus-visible{outline-color:#0b3d91}
+    #servicios,#contacto{scroll-margin-top:8rem}
+    @media(min-width:640px){.btn-navbar-cta{display:inline-flex}}
+    @media(min-width:1024px){
+      .header-inner{flex-wrap:nowrap;gap:.65rem}
+      .nav-links{order:0;flex:0 1 auto;overflow:visible;gap:clamp(.25rem,.8vw,.8rem)}
+      .nav-link{padding:.4rem .35rem;font-size:.76rem}
+      .nav-actions{gap:.4rem}
+    }
+    @media(max-width:480px){
+      .header-inner{width:calc(100% - 1rem);gap:.25rem .5rem}
+      .brand-text .lema{font-size:.95rem}
+      .sub-lema{font-size:.58rem}
+      .nav-links{gap:.1rem}
+      .nav-link{padding:.4rem .45rem;font-size:.8rem}
+      .lang-switch .lang-btn{padding:4px 7px}
+    }
+
+    /* Scroll reveal */
+    .js .reveal-on-scroll{opacity:0;will-change:transform,opacity,filter;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),filter .7s cubic-bezier(.16,1,.3,1)}
+    .reveal-fade-up{transform:translateY(28px);filter:blur(3px)}
+    .reveal-fade-left{transform:translateX(-30px);filter:blur(3px)}
+    .reveal-fade-right{transform:translateX(30px);filter:blur(3px)}
+    .reveal-zoom{transform:scale(.95);filter:blur(3px)}
+    .reveal-on-scroll.is-revealed{opacity:1;transform:translate(0,0) scale(1);filter:blur(0)}
+    .delay-1{transition-delay:80ms}.delay-2{transition-delay:160ms}.delay-3{transition-delay:240ms}
+    .delay-4{transition-delay:320ms}.delay-5{transition-delay:400ms}.delay-6{transition-delay:480ms}
+    @keyframes heroRise{from{opacity:0;transform:translateY(20px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+    .reveal-hero-1,.reveal-hero-2,.reveal-hero-3,.reveal-hero-4{animation:heroRise .7s cubic-bezier(.16,1,.3,1) backwards}
+    .reveal-hero-1{animation-delay:.05s}.reveal-hero-2{animation-delay:.15s}.reveal-hero-3{animation-delay:.28s}.reveal-hero-4{animation-delay:.4s}
+    @media(prefers-reduced-motion:reduce){
+      .reveal-on-scroll{opacity:1!important;transform:none!important;filter:none!important}
+      .reveal-hero-1,.reveal-hero-2,.reveal-hero-3,.reveal-hero-4{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+      .delay-1,.delay-2,.delay-3,.delay-4,.delay-5,.delay-6{transition-delay:0ms}
+    }
+
+    /* Fluid homepage images */
+    .content-image-big{width:min(100%,clamp(280px,34vw,420px));margin-inline:auto}
+    .section-with-image .content-image-big{margin-inline:auto;justify-items:center}
+    .content-image-big img,.figure-scope img{width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;max-width:100%}
+
+    /* Contact form */
+    .fg-contact-wrapper{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:960px;margin:1.5rem auto;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box}
+    .fg-contact-wrapper *{box-sizing:border-box}
+    .fg-contact-info{min-width:0}
+    .fg-badge-sla{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;padding:1rem;border:1px solid rgba(245,158,11,.4);border-radius:10px;background:#fff}
+    .fg-badge-sla .fg-icon{width:22px;height:22px;flex-shrink:0;color:#d97706}
+    .fg-badge-sla h3{margin:0 0 .25rem;color:#0b2545;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+    .fg-badge-sla p{margin:0;color:#475569;font-size:.75rem;line-height:1.4}
+    .fg-info-items{display:flex;flex-direction:column;gap:.5rem;color:#334155;font-size:.85rem}
+    .fg-info-item a{color:#0b3d91;font-weight:600;text-decoration:underline}
+    .fg-form-card{padding:1.25rem 1.5rem;border:1px solid #e2e8f0;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .fg-form-row{display:grid;grid-template-columns:1fr;gap:.75rem}
+    .fg-form-group{min-width:0;margin-bottom:.75rem}
+    .fg-form-group label{display:block;margin-bottom:.25rem;color:#334155;font-size:.7rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+    .fg-form-group input,.fg-form-group select,.fg-form-group textarea{width:100%;padding:.6rem .75rem;border:1px solid #cbd5e1;border-radius:6px;background:#fff;color:#0f172a;font:inherit;font-size:.85rem}
+    .fg-form-group input:focus,.fg-form-group select:focus,.fg-form-group textarea:focus{border-color:#0b3d91;outline:2px solid rgba(11,61,145,.15);outline-offset:1px}
+    .fg-submit-btn{display:flex;width:100%;min-height:44px;align-items:center;justify-content:center;gap:.5rem;padding:.65rem 1rem;border:0;border-radius:6px;background:linear-gradient(90deg,#ffb703,#ff7a1a);color:#081a31;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+    .fg-submit-btn:hover{filter:brightness(1.06)}
+    .fg-form-note,.fg-form-feedback{margin:.75rem 0 0;color:#475569;font-size:.82rem}
+    .fg-form-feedback[hidden]{display:none}
+    .fg-form-feedback a{color:#0b3d91}
+    @media(min-width:540px){.fg-form-row{grid-template-columns:1fr 1fr}}
+    @media(min-width:820px){.fg-contact-wrapper{grid-template-columns:5fr 7fr;align-items:start}}
+    @media(max-width:480px){.fg-form-card{padding:1rem}}
+    .main.full-width{grid-template-columns:minmax(0,1fr)}
+  </style>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fusgement.com/es/index.html">
@@ -59,43 +149,57 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo-area">
+    <a href="/es/index.html" class="logo-area" aria-label="Fusgement Inicio">
       <img src="/images/fusgement-logo-cuadrado.png"
            alt="Fusgement – Gestión de proyectos e ingeniería eléctrica"
            class="logo">
-      <div>
-        <div class="lema">FUSGEMENT - La fusión de la coordinación con la optimización</div>
-        <div class="small">Project Management, Engineering &amp; Consulting Group</div>
-      </div>
-    </div>
-    <nav class="idiomas" aria-label="Selector de idioma">
-<a href="/es/index.html" class="lang-btn active">ES</a>
-<a href="/en/index.html" class="lang-btn">EN</a>
+      <span class="brand-text">
+        <span class="lema">FUSGEMENT</span>
+        <span class="sub-lema">Project Management, Engineering &amp; Consulting Group</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="/es/index.html" class="nav-link active" aria-current="page">Inicio</a>
+      <a href="/es/direccion-de-proyectos.html" class="nav-link">Dirección de proyectos</a>
+      <a href="/es/ingenieria.html" class="nav-link">Servicios de ingeniería</a>
+      <a href="/es/quienes-somos.html" class="nav-link">Quiénes somos</a>
+      <a href="/es/clientes.html" class="nav-link">Clientes</a>
+      <a href="/es/blog/" class="nav-link">Blog</a>
+      <a href="https://cms.fusgement.com" class="nav-link" target="_blank" rel="noopener noreferrer">Proveedores</a>
     </nav>
+    <div class="nav-actions">
+      <nav class="lang-switch" aria-label="Selector de idioma">
+        <a href="/es/index.html" class="lang-btn active" aria-current="page" title="Versión en Español">ES</a>
+        <a href="/en/index.html" class="lang-btn" title="Versión en Inglés">EN</a>
+      </nav>
+      <a href="#contacto" class="btn-navbar-cta">
+        <span>Contactar</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
   </div>
 </header>
 
-<nav class="nav-bar" aria-label="Navegación principal">
-  <div class="nav-inner">
-    <div class="nav-innerindividual"><a href="/es/index.html" class="active">Inicio</a></div>
-    <div class="nav-innerindividual"><a href="/es/direccion-de-proyectos.html">Dirección de proyectos</a></div>
-    <div class="nav-innerindividual"><a href="/es/ingenieria.html">Servicios de ingeniería</a></div>
-    <div class="nav-innerindividual"><a href="/es/quienes-somos.html">Quiénes somos</a></div>
-    <div class="nav-innerindividual"><a href="/es/clientes.html">Clientes</a></div>
-    <div class="nav-innerindividual"><a href="/es/blog/">Blog</a></div>
-    <div class="nav-innerindividual"><a href="/es/contacto.html">Contacto</a></div>
-  </div>
-</nav>
-
-<main class="main container">
+<main class="main container full-width">
   <article class="content card">
 
     <!-- 1. HERO -->
-    <h1>Un proyecto es hacer algo innovador. La gestión lo hace realidad.</h1>
+    <header class="hero-head">
+      <p class="eyebrow reveal-hero-1">Project Management · Engineering · Consulting</p>
+      <h1 class="reveal-hero-2">Un proyecto es hacer algo innovador. <em>La gestión lo hace realidad.</em></h1>
+      <div class="hero-cta reveal-hero-3">
+        <a class="btn-cta" href="/es/contacto.html">Contactar ahora</a>
+        <a class="btn-ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <p class="hero-trust reveal-hero-4">Experiencia previa del fundador en proyectos para <strong>Google</strong>, <strong>Iberdrola</strong>, <strong>Naturgy</strong>, <strong>Sener</strong> y <strong>Technip Energies</strong></p>
+    </header>
 
-    <section class="section-with-image half">
+    <section class="section-with-image half reveal-on-scroll reveal-fade-up">
       <div class="section-text-small">
-        <p style="font-size:0.95rem;color:#5a6a80;line-height:1.7;margin-bottom:1rem;">
+        <p class="lead">
           Fusgement es la empresa a la que delegar la dirección de proyectos,
           liberando a su organización para centrarse en sus áreas de fortaleza. 
           Nos diferenciamos de una ingeniería o consultoría tradicional porque estamos orientados hacia la gestión de proyectos.
@@ -130,44 +234,46 @@
           </div>
         </div>
       </div>
-      <figure class="content-image-big">
-        <img src="/images/coordinationandoptimization/coordination.png"
-             alt="Coordinación en la gestión de proyectos de ingeniería"
-             loading="lazy">
-        <img src="/images/coordinationandoptimization/optimization.png"
-             alt="Optimización de proyectos de ingeniería eléctrica"
-             loading="lazy">
-      </figure>
+
+    </section>
+
+    <!-- 1b. CIFRAS -->
+    <section class="reveal-on-scroll reveal-fade-up" aria-label="Cifras clave">
+      <div class="stats">
+        <div class="stat"><div class="stat-num"><small>&lt;</small><span class="count" style="--to:24"></span><small>h</small></div><div class="stat-lbl">Respuesta a su consulta</div></div>
+        <div class="stat"><div class="stat-num">1M€+</div><div class="stat-lbl">Presupuesto máximo gestionado en proyectos previos</div></div>
+        <div class="stat"><div class="stat-num"><span class="count" style="--to:5"></span>+</div><div class="stat-lbl">Años de experiencia previa en ingeniería eléctrica y dirección de proyectos</div></div>
+      </div>
     </section>
 
     <!-- 2. SERVICIOS -->
-    <section style="margin-top:2rem;">
+    <section id="servicios" class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
       <div class="section-label">Servicios</div>
       <h2 style="margin-top:0.2rem;">¿En qué podemos ayudarle?</h2>
       <div class="servicios-grid">
 
-        <a href="/es/direccion-de-proyectos.html" class="servicio-card destacado">
+        <a href="/es/direccion-de-proyectos.html" class="servicio-card destacado reveal-on-scroll reveal-fade-up delay-1">
           <div class="sc-label">Servicio principal</div>
           <h3>Dirección de proyectos</h3>
           <p>PM y PMO: planificación, coordinación de equipos, control de costes, gestión de riesgos y cierre. Con o sin oficina de proyectos implantada.</p>
           <span class="sc-arrow">Ver servicio →</span>
         </a>
 
-        <a href="/es/ingenieria-electrica.html" class="servicio-card destacado">
+        <a href="/es/ingenieria-electrica.html" class="servicio-card destacado reveal-on-scroll reveal-fade-up delay-2">
           <div class="sc-label">Servicio principal</div>
           <h3>Ingeniería eléctrica</h3>
           <p>Sistemas de potencia, estudios eléctricos, diseño de subestaciones, automatización, protecciones, configuración de relés (GE, Siemens, ABB, SEL), puesta en marcha, IEC 61850.</p>
           <span class="sc-arrow">Ver servicio →</span>
         </a>
 
-        <a href="/es/ingenieria.html" class="servicio-card">
+        <a href="/es/ingenieria.html" class="servicio-card reveal-on-scroll reveal-fade-up delay-3">
           <div class="sc-label">Servicio</div>
           <h3>Ingeniería multidisciplinar</h3>
           <p>Energía renovable, sector industrial (Industria 4.0) y edificación (HVAC, certificación energética). Desde la idea hasta la puesta en marcha.</p>
           <span class="sc-arrow">Ver servicio →</span>
         </a>
 
-        <a href="/es/otros-servicios.html" class="servicio-card">
+        <a href="/es/otros-servicios.html" class="servicio-card reveal-on-scroll reveal-fade-up delay-4">
           <div class="sc-label">Servicio</div>
           <h3>Consultoría y otros servicios</h3>
           <p>Consultoría técnica, negociaciones contractuales, inspecciones, gestión de riesgos, formación especializada y soporte a proyectos.</p>
@@ -178,12 +284,12 @@
     </section>
 
     <!-- 3. CLIENTES -->
-    <section style="margin-top:2rem;">
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
       <div class="section-label">Clientes</div>
       <h2 style="margin-top:0.2rem;">¿Con quién trabajamos?</h2>
       <p style="color:#5a6a80;font-size:0.93rem;margin-bottom:0.5rem;">
         Organizaciones que necesitan ejecutar proyectos técnicos complejos con mayor eficiencia y control.
-        Equipo con experiencia profesional previa en proyectos para <strong>Iberdrola, Schneider Electric, Naturgy, Google y Technip Energies</strong>.
+        Experiencia profesional previa del fundador en proyectos para <strong>Google, Iberdrola, Naturgy, Sener, Technip Energies, y muchos otros del ámbito energético, centros de datos, subestaciones, fabricación de equipos...</strong>.
       </p>
       <div class="clientes-tipos">
         <div class="cliente-tipo">Instaladores y EPCs que necesitan soporte de ingeniería</div>
@@ -199,7 +305,7 @@
     </section>
 
     <!-- 4. POR QUÉ FUSGEMENT -->
-    <section style="margin-top:2rem;">
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
       <div class="section-label">Por qué Fusgement</div>
       <h2 style="margin-top:0.2rem;">La fusión de la coordinación con la optimización</h2>
       <div class="section-with-image half">
@@ -208,6 +314,16 @@
             No somos solo gestores de proyectos ni solo ingenieros: somos las dos cosas a la vez,
             con experiencia real en entornos industriales, energéticos y de consultoría.
           </p>
+                <figure class="content-image-big">
+                  <img src="/images/coordinationandoptimization/coordination.png"
+                      alt="Coordinación en la gestión de proyectos de ingeniería"
+                      fetchpriority="high">
+                  <img src="/images/coordinationandoptimization/optimization.png"
+                      alt="Optimización de proyectos de ingeniería eléctrica"
+                      loading="lazy">
+                </figure>
+
+          
           <p style="font-size:0.92rem;color:#5a6a80;line-height:1.7;margin-bottom:0.8rem;">
             Actuamos como PM interno integrándonos en su equipo, o como PM externo gestionando
             proyectos bajo su mandato. Desde iniciativas simples hasta presupuestos superiores a 1 M€.
@@ -227,8 +343,7 @@
           <div class="dif-lbl">Presupuesto máximo gestionado</div>
           <hr class="dif-sep">
           <div class="norm-title">Normativa y metodologías</div>
-          <div class="norm-pills">
-            <span class="norm-pill">IEC</span>
+          <div class="marquee"><div class="marquee-track"><span class="norm-pill">IEC</span>
             <span class="norm-pill">IEEE</span>
             <span class="norm-pill">PMI</span>
             <span class="norm-pill">ISO</span>
@@ -236,13 +351,21 @@
             <span class="norm-pill">Proyectos tradicionales</span>
             <span class="norm-pill">Proyectos agile</span>
             <span class="norm-pill">Proyectos híbridos</span>
-            <span class="norm-pill">Gestión de programas</span>            
-          </div>
+            <span class="norm-pill">Gestión de programas</span>
+<span class="norm-pill" aria-hidden="true">IEC</span>
+            <span class="norm-pill" aria-hidden="true">IEEE</span>
+            <span class="norm-pill" aria-hidden="true">PMI</span>
+            <span class="norm-pill" aria-hidden="true">ISO</span>
+            <span class="norm-pill" aria-hidden="true">Industria 4.0</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos tradicionales</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos agile</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos híbridos</span>
+            <span class="norm-pill" aria-hidden="true">Gestión de programas</span></div></div>
         </div>
     </section>
 
     <!-- 5. CTA -->
-    <section style="margin-top:2rem;">
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
       <div class="cta-band">
         <div>
           <p>¿Tiene un proyecto que necesita dirección o ingeniería?
@@ -253,57 +376,78 @@
       </div>
     </section>
 
+    <section id="contacto" class="reveal-on-scroll reveal-fade-up" aria-labelledby="contacto-title">
+      <div class="section-label">Contacto</div>
+      <h2 id="contacto-title" style="margin-top:0.2rem;">Cuéntenos sobre su proyecto</h2>
+      <div class="fg-contact-wrapper">
+        <div class="fg-contact-info">
+          <div class="fg-badge-sla">
+            <svg class="fg-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <h3>Respuesta en menos de 24 horas</h3>
+              <p>Evaluación técnica preliminar y asignación de recursos sin compromiso.</p>
+            </div>
+          </div>
+          <div class="fg-info-items">
+            <div class="fg-info-item"><strong>Email:</strong> <a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a></div>
+            <div class="fg-info-item"><strong>Sede:</strong> Vitoria-Gasteiz, Álava (España)</div>
+            <div class="fg-info-item"><strong>Alcance:</strong> Proyectos en España y ámbito internacional</div>
+          </div>
+        </div>
+        <div class="fg-form-card">
+          <form id="fusgementContactForm" action="mailto:fusgement@fusgement.com" method="post" enctype="text/plain">
+            <div class="fg-form-row">
+              <div class="fg-form-group">
+                <label for="fg-name">Nombre *</label>
+                <input type="text" id="fg-name" name="name" required autocomplete="name" placeholder="Su nombre">
+              </div>
+              <div class="fg-form-group">
+                <label for="fg-company">Empresa *</label>
+                <input type="text" id="fg-company" name="company" required autocomplete="organization" placeholder="Empresa u organización">
+              </div>
+            </div>
+            <div class="fg-form-row">
+              <div class="fg-form-group">
+                <label for="fg-email">Email corporativo *</label>
+                <input type="email" id="fg-email" name="email" required autocomplete="email" placeholder="correo@empresa.com">
+              </div>
+              <div class="fg-form-group">
+                <label for="fg-service">Servicio de interés</label>
+                <select id="fg-service" name="service">
+                  <option value="Dirección de proyectos (PM / PMO)">Dirección de proyectos (PM / PMO)</option>
+                  <option value="Ingeniería eléctrica y subestaciones">Ingeniería eléctrica y subestaciones</option>
+                  <option value="Ingeniería multidisciplinar / Renovables">Ingeniería multidisciplinar / Renovables</option>
+                  <option value="Consultoría técnica y peritajes">Consultoría técnica y peritajes</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg-form-group">
+              <label for="fg-message">Detalles o requerimientos del proyecto *</label>
+              <textarea id="fg-message" name="message" rows="3" required placeholder="Describa brevemente el alcance técnico, ubicación o plazos estimados..."></textarea>
+            </div>
+            <button type="submit" class="fg-submit-btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Abrir consulta por email</span>
+            </button>
+            <p class="fg-form-note">Al enviar, se abrirá su aplicación de correo con los datos preparados. Revise y envíe el mensaje para completar la consulta.</p>
+            <p id="fg-form-feedback" class="fg-form-feedback" role="status" aria-live="polite" hidden>
+              Se ha preparado su mensaje. Si no se abre su aplicación de correo, escríbanos a
+              <a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a>.
+            </p>
+          </form>
+        
+        </div>
+      </div>
+    </section>
+
   </article>
 
-  <!-- ASIDE -->
-  <aside class="aside card small">
-    <h2>Contacto rápido</h2>
-    <p><a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a></p>
-
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:0.9rem 0;">
-
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">Síguenos</p>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <a href="https://www.linkedin.com/company/fusgement-project-management-engineering-and-consulting"
-         target="_blank" rel="noopener" aria-label="LinkedIn de Fusgement">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0b3d91" width="26" height="26" focusable="false">
-          <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-        </svg>
-      </a>
-      <a href="https://youtube.com/@fusgement?si=ZVqQNtf6rJThtAeu"
-         target="_blank" rel="noopener" aria-label="YouTube de Fusgement">
-        <svg viewBox="0 0 461.001 461.001" width="26" height="26" focusable="false">
-          <path style="fill:#F61C0D;" d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728
-          c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137
-          C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607
-          c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"/>
-        </svg>
-      </a>
-    </div>
-
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:0.9rem 0;">
-
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">Servicios</p>
-    <nav aria-label="Acceso rápido a servicios">
-      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-        <li><a href="/es/direccion-de-proyectos.html" style="font-size:0.84rem;color:var(--primary);">→ Dirección de proyectos</a></li>
-        <li><a href="/es/ingenieria-electrica.html" style="font-size:0.84rem;color:var(--primary);">→ Ingeniería eléctrica</a></li>
-        <li><a href="/es/ingenieria.html" style="font-size:0.84rem;color:var(--primary);">→ Ingeniería</a></li>
-        <li><a href="/es/otros-servicios.html" style="font-size:0.84rem;color:var(--primary);">→ Otros servicios</a></li>
-      </ul>
-    </nav>
-
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:0.9rem 0;">
-
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">Empresa</p>
-    <nav aria-label="Acceso rápido empresa">
-      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-        <li><a href="/es/quienes-somos.html" style="font-size:0.84rem;color:var(--primary);">→ Quiénes somos</a></li>
-        <li><a href="/es/clientes.html" style="font-size:0.84rem;color:var(--primary);">→ Clientes</a></li>
-        
-      </ul>
-    </nav>
-  </aside>
 </main>
 
 <footer class="footer" role="contentinfo">
@@ -320,5 +464,43 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<a class="fab-cta" href="/es/contacto.html">Contactar ahora</a>
+<script>
+const contactForm = document.getElementById('fusgementContactForm');
+contactForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const formData = new FormData(contactForm);
+  const body = [
+    `Nombre: ${formData.get('name')}`,
+    `Empresa: ${formData.get('company')}`,
+    `Email: ${formData.get('email')}`,
+    `Servicio: ${formData.get('service')}`,
+    '',
+    `Detalles del proyecto: ${formData.get('message')}`
+  ].join('\n');
+  const subject = `Consulta técnica - ${formData.get('company')}`;
+  window.location.href = `mailto:fusgement@fusgement.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('fg-form-feedback').hidden = false;
+});
+
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+  revealElements.forEach(element => element.classList.add('is-revealed'));
+} else {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.15 });
+  revealElements.forEach(element => revealObserver.observe(element));
+}
+
+/* Foco de luz que sigue al cursor en las tarjetas de servicio */
+document.querySelectorAll('.servicio-card').forEach(c=>c.addEventListener('pointermove',e=>{
+  const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');}));
+</script>
 </body>
 </html>

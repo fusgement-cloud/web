@@ -1,0 +1,161 @@
+/* ================= CSS DEL NAVBAR COMPACTO ================= */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #dde4ef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(11, 37, 69, 0.04);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - clamp(1rem, 3vw, 2.5rem), 1200px);
+  margin: 0 auto;
+  height: clamp(60px, 7vh, 72px);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.logo {
+  height: clamp(38px, 5vh, 46px);
+  width: auto;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lema {
+  font-weight: 800;
+  font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.15rem);
+  line-height: 1.1;
+  color: #083079;
+  letter-spacing: -0.02em;
+}
+
+.sub-lema {
+  font-size: 0.72rem;
+  color: #c2410c;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Enlaces de escritorio */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #0b3d91;
+}
+
+.nav-link.active {
+  color: #0b3d91;
+  font-weight: 700;
+}
+
+/* Acciones y Selector ES / EN */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid #dde4ef;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #64748b;
+  font-size: 0.78rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.lang-btn:hover {
+  color: #0b2545;
+}
+
+.lang-btn.active {
+  background: #0b3d91;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.lang-sub {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+.btn-navbar-cta {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #081a31;
+  background: linear-gradient(90deg, #ffb703, #ff7a1a);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-navbar-cta {
+    display: inline-flex;
+  }
+}
+
+.btn-navbar-cta:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}

@@ -22,3 +22,29 @@ Before we get started, keep in mind:
 
   * You are initializing within an existing Firebase project directory
 
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-11-12T09:48:11.284Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-12T09:48:11.285Z] > authorizing via signed-in user (fusgement@fusgement.com)
+[debug] [2026-11-12T09:48:11.310Z] Checked if tokens are valid: true, expires at: 1794480198966
+[debug] [2026-11-12T09:48:11.310Z] Checked if tokens are valid: true, expires at: 1794480198966
+[debug] [2026-11-12T09:48:11.313Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase [none]
+[debug] [2026-11-12T09:48:11.760Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase 200
+[debug] [2026-11-12T09:48:11.760Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase {"projectId":"fusgement-firebase","projectNumber":"340870246718","displayName":"fusgement firebase","name":"projects/fusgement-firebase","resources":{"hostingSite":"fusgement-firebase"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_4ae0be71-6654-4658-bc11-f9e69ee2acca"}
+[info] i  Using project fusgement-firebase (fusgement firebase) . 
+[info] 
+=== Hosting Setup
+[debug] [2026-11-12T09:48:50.690Z] Checked if tokens are valid: true, expires at: 1794480198966
+[debug] [2026-11-12T09:48:50.690Z] Checked if tokens are valid: true, expires at: 1794480198966
+[debug] [2026-11-12T09:48:50.691Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase [none]
+[debug] [2026-11-12T09:48:51.007Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase 200
+[debug] [2026-11-12T09:48:51.007Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fusgement-firebase {"projectId":"fusgement-firebase","projectNumber":"340870246718","displayName":"fusgement firebase","name":"projects/fusgement-firebase","resources":{"hostingSite":"fusgement-firebase"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_4ae0be71-6654-4658-bc11-f9e69ee2acca"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

@@ -3,5 +3,7 @@ Allow: /
 
 # No indexar la carpeta SSL (certificados, no es contenido web)
 Disallow: /ssl/
+Disallow: /admin/
+Disallow: /_posts/
 
 Sitemap: https://fusgement.com/sitemap.xml

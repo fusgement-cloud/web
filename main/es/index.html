@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de proyectos, ingeniería y consultoría técnica | Fusgement</title>
+  <meta name="description" content="Fusgement es su socio estratégico en gestión de proyectos, ingeniería eléctrica y consultoría técnica. Delegue la dirección de proyectos complejos y céntrese en sus áreas de mayor valor.">
+  <link rel="canonical" href="https://fusgement.com/es/index.html">
+  <link rel="alternate" hreflang="es" href="https://fusgement.com/es/index.html">
+  <link rel="alternate" hreflang="en" href="https://fusgement.com/en/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://fusgement.com/es/index.html">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index-2026.css">
+  <style>
+    /* Compact navigation */
+    .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #dde4ef;box-shadow:0 1px 3px rgba(11,37,69,.04);padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    .header-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;width:min(100% - clamp(1rem,3vw,2.5rem),1200px);min-height:clamp(60px,7vh,72px);margin:0 auto}
+    .logo-area{display:flex;align-items:center;gap:12px;min-width:0;flex:0 1 auto;text-decoration:none}
+    .logo-area .logo{height:clamp(38px,5vh,46px);width:auto;border-radius:6px;background:#fff}
+    .brand-text{display:flex;flex-direction:column}
+    .brand-text .lema{font-weight:800;font-size:clamp(.95rem,1.2vw + .5rem,1.15rem);line-height:1.1;color:#083079;letter-spacing:-.02em}
+    .sub-lema{margin-top:2px;color:#c2410c;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:.3rem;order:3;flex:1 1 100%;min-width:0;overflow-x:auto;padding:.2rem 0;scrollbar-width:thin}
+    .nav-link{display:inline-flex;min-height:44px;align-items:center;flex:0 0 auto;padding:.4rem .55rem;color:#334155;font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s ease}
+    .nav-link:hover,.nav-link.active{color:#0b3d91}
+    .nav-link.active{font-weight:700}
+    .nav-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+    .lang-switch{display:flex;align-items:center;padding:3px;border:1px solid #dde4ef;border-radius:8px;background:#f1f5f9}
+    .lang-switch .lang-btn{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border:0;border-radius:6px;background:transparent;color:#64748b;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .15s ease}
+    .lang-switch .lang-btn:hover{color:#0b2545}
+    .lang-switch .lang-btn.active{background:#0b3d91;color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+    .lang-sub{font-size:9px;opacity:.8}
+    .btn-navbar-cta{display:none;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;background:linear-gradient(90deg,#ffb703,#ff7a1a);color:#081a31;font-size:.78rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .15s ease,filter .15s ease}
+    .btn-navbar-cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .site-header :focus-visible{outline-color:#0b3d91}
+    #servicios,#contacto{scroll-margin-top:8rem}
+    @media(min-width:640px){.btn-navbar-cta{display:inline-flex}}
+    @media(min-width:1024px){
+      .header-inner{flex-wrap:nowrap;gap:.65rem}
+      .nav-links{order:0;flex:0 1 auto;overflow:visible;gap:clamp(.25rem,.8vw,.8rem)}
+      .nav-link{padding:.4rem .35rem;font-size:.76rem}
+      .nav-actions{gap:.4rem}
+    }
+    @media(max-width:480px){
+      .header-inner{width:calc(100% - 1rem);gap:.25rem .5rem}
+      .brand-text .lema{font-size:.95rem}
+      .sub-lema{font-size:.58rem}
+      .nav-links{gap:.1rem}
+      .nav-link{padding:.4rem .45rem;font-size:.8rem}
+      .lang-switch .lang-btn{padding:4px 7px}
+    }
+
+    /* Scroll reveal */
+    .reveal-ready .reveal-on-scroll{will-change:transform,opacity,filter}
+    .reveal-fade-up{transform:translateY(28px);filter:blur(3px)}
+    .reveal-fade-left{transform:translateX(-30px);filter:blur(3px)}
+    .reveal-fade-right{transform:translateX(30px);filter:blur(3px)}
+    .reveal-zoom{transform:scale(.95);filter:blur(3px)}
+    .reveal-on-scroll.is-revealed{opacity:1;transform:translate(0,0) scale(1);filter:blur(0)}
+    .delay-1{transition-delay:80ms}.delay-2{transition-delay:160ms}.delay-3{transition-delay:240ms}
+    .delay-4{transition-delay:320ms}.delay-5{transition-delay:400ms}.delay-6{transition-delay:480ms}
+    @keyframes heroRise{from{opacity:0;transform:translateY(20px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+    .reveal-hero-1,.reveal-hero-2,.reveal-hero-3,.reveal-hero-4{animation:heroRise .7s cubic-bezier(.16,1,.3,1) backwards}
+    .reveal-hero-1{animation-delay:.05s}.reveal-hero-2{animation-delay:.15s}.reveal-hero-3{animation-delay:.28s}.reveal-hero-4{animation-delay:.4s}
+    @media(prefers-reduced-motion:reduce){
+      .reveal-on-scroll{opacity:1!important;transform:none!important;filter:none!important}
+      .reveal-hero-1,.reveal-hero-2,.reveal-hero-3,.reveal-hero-4{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+      .delay-1,.delay-2,.delay-3,.delay-4,.delay-5,.delay-6{transition-delay:0ms}
+    }
+
+    /* Fluid homepage images */
+    .content-image-big{width:min(100%,clamp(280px,34vw,420px));margin-left:auto;margin-right:auto}
+    .section-with-image .content-image-big{width:min(100%,clamp(320px,40vw,520px));margin-left:auto;margin-right:auto;justify-items:center}
+    .content-image-big img,.figure-scope img{width:100%;height:auto;;object-fit:contain;max-width:100%;max-height: 900px;}
+
+    /* Contact form */
+    .fg-contact-wrapper{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:960px;margin:1.5rem auto;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box}
+    .fg-contact-wrapper *{box-sizing:border-box}
+    .fg-contact-info{min-width:0}
+    .fg-badge-sla{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;padding:1rem;border:1px solid rgba(245,158,11,.4);border-radius:10px;background:#fff}
+    .fg-badge-sla .fg-icon{width:22px;height:22px;flex-shrink:0;color:#d97706}
+    .fg-badge-sla h3{margin:0 0 .25rem;color:#0b2545;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+    .fg-badge-sla p{margin:0;color:#475569;font-size:.75rem;line-height:1.4}
+    .fg-info-items{display:flex;flex-direction:column;gap:.5rem;color:#334155;font-size:.85rem}
+    .fg-info-item a{color:#0b3d91;font-weight:600;text-decoration:underline}
+    .fg-form-card{padding:1.25rem 1.5rem;border:1px solid #e2e8f0;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+    .fg-form-row{display:grid;grid-template-columns:1fr;gap:.75rem}
+    .fg-form-group{min-width:0;margin-bottom:.75rem}
+    .fg-form-group label{display:block;margin-bottom:.25rem;color:#334155;font-size:.7rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+    .fg-form-group input,.fg-form-group select,.fg-form-group textarea{width:100%;padding:.6rem .75rem;border:1px solid #cbd5e1;border-radius:6px;background:#fff;color:#0f172a;font:inherit;font-size:.85rem}
+    .fg-form-group input:focus,.fg-form-group select:focus,.fg-form-group textarea:focus{border-color:#0b3d91;outline:2px solid rgba(11,61,145,.15);outline-offset:1px}
+    .fg-submit-btn{display:flex;width:100%;min-height:44px;align-items:center;justify-content:center;gap:.5rem;padding:.65rem 1rem;border:0;border-radius:6px;background:linear-gradient(90deg,#ffb703,#ff7a1a);color:#081a31;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+    .fg-submit-btn:hover{filter:brightness(1.06)}
+    .fg-form-note,.fg-form-feedback{margin:.75rem 0 0;color:#475569;font-size:.82rem}
+    .fg-form-feedback[hidden]{display:none}
+    .fg-form-feedback a{color:#0b3d91}
+    @media(min-width:540px){.fg-form-row{grid-template-columns:1fr 1fr}}
+    @media(min-width:820px){.fg-contact-wrapper{grid-template-columns:5fr 7fr;align-items:start}}
+    @media(max-width:480px){.fg-form-card{padding:1rem}}
+    .main.full-width{grid-template-columns:minmax(0,1fr)}
+    .founder-certifications{align-self:start;min-width:0}
+    #founder-certifications-title{margin:1rem 0 0;font-size:1.05rem;text-align:center}
+    .founder-certifications-logos{display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .founder-certifications img{display:block;width:100%;max-width:240px;height:auto;object-fit:contain}
+    @media(min-width:1081px){.section-with-image.half.founder-intro{grid-template-columns:minmax(0,2fr) minmax(220px,1fr)}}
+  </style>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fusgement.com/es/index.html">
+  <meta property="og:title" content="Gestión de proyectos, ingeniería y consultoría técnica | Fusgement">
+  <meta property="og:description" content="Fusgement: gestión de proyectos, ingeniería eléctrica y consultoría técnica. Su socio estratégico para ejecutar proyectos complejos con eficiencia y control.">
+  <meta property="og:image" content="https://fusgement.com/images/fusgement_logo6_fondo_y_letras.png">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gestión de proyectos e ingeniería eléctrica | Fusgement">
+  <meta name="twitter:description" content="Su socio estratégico en gestión de proyectos, ingeniería eléctrica y consultoría técnica.">
+  <meta name="twitter:image" content="https://fusgement.com/images/fusgement_logo6_fondo_y_letras.png">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fusgement",
+    "url": "https://fusgement.com",
+    "logo": "https://fusgement.com/images/fusgement_logo6_fondo_y_letras.png",
+    "email": "fusgement@fusgement.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vitoria-Gasteiz",
+      "addressRegion": "Álava",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/fusgement-project-management-engineering-and-consulting",
+      "https://youtube.com/@fusgement"
+    ],
+    "description": "Empresa especializada en gestión de proyectos, ingeniería eléctrica y consultoría técnica."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://fusgement.com/es/index.html" }
+    ]
+  }
+  </script>
+  <script src="/js/consent.js" defer></script>
+  <link rel="stylesheet" href="/css/site-enhancements.css">
+  <script src="/js/scroll-reveal.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/es/index.html" class="logo-area" aria-label="Fusgement Inicio">
+      <img src="/images/fusgement-logo-cuadrado.png"
+           alt="Fusgement – Gestión de proyectos e ingeniería eléctrica"
+           class="logo">
+      <span class="brand-text">
+        <span class="lema">FUSGEMENT</span>
+        <span class="sub-lema">Project Management, Engineering &amp; Consulting Group</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="/es/index.html" class="nav-link active" aria-current="page">Inicio</a>
+      <a href="/es/direccion-de-proyectos.html" class="nav-link">Dirección de proyectos</a>
+      <a href="/es/ingenieria.html" class="nav-link">Servicios de ingeniería</a>
+      <a href="/es/quienes-somos.html" class="nav-link">Quiénes somos</a>
+      <a href="/es/clientes.html" class="nav-link">Clientes</a>
+      <a href="/es/blog/" class="nav-link">Blog</a>
+      <a href="https://cms.fusgement.com" class="nav-link" target="_blank" rel="noopener noreferrer">Proveedores</a>
+    </nav>
+    <div class="nav-actions">
+      <nav class="lang-switch" aria-label="Selector de idioma">
+        <a href="/es/index.html" class="lang-btn active" aria-current="page" title="Versión en Español">ES</a>
+        <a href="/en/index.html" class="lang-btn" title="Versión en Inglés">EN</a>
+      </nav>
+      <a href="#contacto" class="btn-navbar-cta">
+        <span>Contactar</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="main container full-width">
+  <article class="content card">
+
+    <!-- 1. HERO -->
+    <header class="hero-head">
+      <p class="eyebrow reveal-hero-1">Project Management · Engineering · Consulting</p>
+      <h1 class="reveal-hero-2">Un proyecto es hacer algo <span class="hero-impact-word">innovador</span>. <em>La gestión lo hace realidad.</em></h1>
+      <div class="hero-cta reveal-hero-3">
+        <a class="btn-cta" href="/es/contacto.html">Contactar ahora</a>
+        <a class="btn-ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <p class="hero-trust reveal-hero-4">Experiencia previa del fundador en proyectos para <strong>Google</strong>, <strong>Iberdrola</strong>, <strong>Naturgy</strong>, <strong>Sener</strong> y <strong>Technip Energies</strong></p>
+    </header>
+
+    <section class="section-with-image half founder-intro reveal-on-scroll reveal-fade-up">
+      <div class="section-text-small">
+        <p class="lead">
+          Fusgement es la empresa a la que delegar la dirección de proyectos,
+          liberando a su organización para centrarse en sus áreas de fortaleza. 
+          Nos diferenciamos de una ingeniería o consultoría tradicional porque estamos orientados hacia la gestión de proyectos.
+           <br>
+          <br> Gestión de proyectos, ingeniería eléctrica y consultoría técnica bajo un mismo equipo.
+        </p>
+        <div class="pills">
+            <span class="pill b">PM interno o externo</span>
+            <span class="pill b">Con o sin PMO implantada</span>
+            <span class="pill g">IEC · IEEE · PMI · ISO</span>
+            <span class="pill g">Consultoría de gestión</span>
+            <span class="pill g">Desarrollo de proyectos</span>
+            <span class="pill g">Consultoría Industrial</span>
+          </div>
+        <div class="valor-grid">
+          <div class="valor-item">
+            <strong>Rigor técnico</strong>
+            <span>Ingeniería basada en datos y normativa técnica, apoyada en simulación y análisis. Incorporamos progresivamente tecnologías como la IA para optimizar soluciones en función del grado de madurez y las necesidades de cada proyecto.</span>
+          </div>
+          <div class="valor-item">
+            <strong>Reducción de carga</strong>
+            <span>Liberamos a su equipo de la coordinación y gestión técnica del proyecto.</span>
+          </div>
+          <div class="valor-item">
+            <strong>Mayor satisfacción</strong>
+            <span>Tiempo, coste y alcance y otros indicadores monitorizados.</span>
+          </div>
+          <div class="valor-item">
+            <strong>Respuesta ágil</strong>
+            <span>Adaptación rápida a cambios normativos, tecnológicos y de liderazgo sin reestructurar su organización.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="founder-certifications" aria-labelledby="founder-certifications-title">
+        <div class="founder-certifications-logos">
+          <img class="pmp-certification" src="/images/pmpcertif.png"
+          alt="Certificación Project Management Professional (PMP) del PMI"
+          loading="lazy">
+          <img src="/images/cogiti%20miembro.webp"
+          alt="Acreditación de colegiación COGITI, número 2374"
+          loading="lazy">
+          <img src="/images/coiia%20miembro.webp"
+          alt="Acreditación de miembro del COIIA, número AD06079"
+          loading="lazy">
+        </div>
+        <h2 id="founder-certifications-title">Certificaciones del fundador</h2>
+      </div>
+
+    </section>
+
+    <!-- 1b. CIFRAS -->
+    <section class="reveal-on-scroll reveal-fade-up" aria-label="Cifras clave">
+      <div class="stats">
+        <div class="stat"><div class="stat-num"><small>&lt;</small><span class="count" style="--to:24"></span><small>h</small></div><div class="stat-lbl">Respuesta a su consulta</div></div>
+        <div class="stat"><div class="stat-num">1M€+</div><div class="stat-lbl">Presupuesto típico gestionado en proyectos previos</div></div>
+        <div class="stat"><div class="stat-num"><span class="count" style="--to:5"></span>+</div><div class="stat-lbl">Años de experiencia previa en ingeniería eléctrica y dirección de proyectos</div></div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICIOS -->
+    <section id="servicios" class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
+      <div class="section-label">Servicios</div>
+      <h2 style="margin-top:0.2rem;">¿En qué podemos ayudarle?</h2>
+      <div class="servicios-grid">
+
+        <a href="/es/direccion-de-proyectos.html" class="servicio-card destacado reveal-on-scroll reveal-fade-up delay-1">
+          <div class="sc-label">Servicio principal</div>
+          <h3>Dirección de proyectos</h3>
+          <p>PM y PMO: planificación, coordinación de equipos, control de costes, gestión de riesgos y cierre. Con o sin oficina de proyectos implantada.</p>
+          <span class="sc-arrow">Ver servicio →</span>
+        </a>
+
+        <a href="/es/ingenieria-electrica.html" class="servicio-card destacado reveal-on-scroll reveal-fade-up delay-2">
+          <div class="sc-label">Servicio principal</div>
+          <h3>Ingeniería eléctrica</h3>
+          <p>Sistemas de potencia, estudios eléctricos, diseño de subestaciones, automatización, protecciones, configuración de relés (GE, Siemens, ABB, SEL), puesta en marcha, IEC 61850.</p>
+          <span class="sc-arrow">Ver servicio →</span>
+        </a>
+
+        <a href="/es/ingenieria.html" class="servicio-card reveal-on-scroll reveal-fade-up delay-3">
+          <div class="sc-label">Servicio</div>
+          <h3>Ingeniería multidisciplinar</h3>
+          <p>Energía renovable, sector industrial (Industria 4.0) y edificación (HVAC, certificación energética). Desde la idea hasta la puesta en marcha.</p>
+          <span class="sc-arrow">Ver servicio →</span>
+        </a>
+
+        <a href="/es/otros-servicios.html" class="servicio-card reveal-on-scroll reveal-fade-up delay-4">
+          <div class="sc-label">Servicio</div>
+          <h3>Consultoría y otros servicios</h3>
+          <p>Consultoría técnica, negociaciones contractuales, inspecciones, gestión de riesgos, formación especializada y soporte a proyectos.</p>
+          <span class="sc-arrow">Ver servicio →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 3. CLIENTES -->
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
+      <div class="section-label">Clientes</div>
+      <h2 style="margin-top:0.2rem;">¿Con quién trabajamos?</h2>
+      <p style="color:#5a6a80;font-size:0.93rem;margin-bottom:0.5rem;">
+        Organizaciones que necesitan ejecutar proyectos técnicos complejos con mayor eficiencia y control.
+        Experiencia profesional previa del fundador en proyectos para <strong>Google, Iberdrola, Naturgy, Sener, Technip Energies, y muchos otros del ámbito energético, centros de datos, subestaciones, fabricación de equipos...</strong>.
+      </p>
+      <div class="clientes-tipos">
+        <div class="cliente-tipo">Instaladores y EPCs que necesitan soporte de ingeniería</div>
+        <div class="cliente-tipo">Grandes consultoras que subcontratan paquetes técnicos</div>
+        <div class="cliente-tipo">Utilities y ESCOs que externalizan gestión de proyectos</div>
+        <div class="cliente-tipo">Promotores de parques de energía renovable</div>
+        <div class="cliente-tipo">Industrias intensivas en energía y automatización</div>
+        <div class="cliente-tipo">Administraciones públicas y ayuntamientos</div>
+      </div>
+      <p style="margin-top:0.9rem;">
+        <a href="/es/clientes.html" style="color:var(--primary);font-weight:600;font-size:0.9rem;">Ver perfil de clientes →</a>
+      </p>
+    </section>
+
+    <!-- 4. POR QUÉ FUSGEMENT -->
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
+      <div class="section-label">Por qué Fusgement</div>
+      <h2 style="margin-top:0.2rem;">La fusión de la coordinación con la optimización</h2>
+      <div class="section-with-image half">
+        <div class="section-text-small">
+          <p style="font-size:0.92rem;color:#5a6a80;line-height:1.7;margin-bottom:0.8rem;">
+            No somos solo gestores de proyectos ni solo ingenieros: somos las dos cosas a la vez,
+            con experiencia real en entornos industriales, energéticos y de consultoría.
+          </p>
+                <figure class="content-image-big">
+                  <img src="/images/coordinationandoptimization/coordination.png"
+                      alt="Coordinación en la gestión de proyectos de ingeniería"
+                      fetchpriority="high">
+                  <img src="/images/coordinationandoptimization/optimization.png"
+                      alt="Optimización de proyectos de ingeniería eléctrica"
+                      loading="lazy">
+                </figure>
+
+          
+          <p style="font-size:0.92rem;color:#5a6a80;line-height:1.7;margin-bottom:0.8rem;">
+            Actuamos como PM interno integrándonos en su equipo, o como PM externo gestionando
+            proyectos bajo su mandato. Desde iniciativas simples hasta presupuestos superiores a 1 M€.
+          </p>
+          <p style="margin-top:0.5rem;">
+            <a href="/es/quienes-somos.html" style="color:var(--primary);font-weight:600;font-size:0.9rem;">Conocer el equipo →</a>
+          </p>
+        </div>
+        <figure class="content-image-big">
+          <img src="/images/pm/time_money_and_scope.png"
+               alt="Control de tiempo, coste y alcance en proyectos de ingeniería"
+               loading="lazy">
+        </figure>
+      </div>
+      <div class="dif-box">
+          <div class="dif-num">1M€+</div>
+          <div class="dif-lbl">Presupuesto típico gestionado</div>
+          <hr class="dif-sep">
+          <div class="norm-title">Normativa y metodologías</div>
+          <div class="marquee"><div class="marquee-track"><span class="norm-pill">IEC</span>
+            <span class="norm-pill">IEEE</span>
+            <span class="norm-pill">PMI</span>
+            <span class="norm-pill">ISO</span>
+            <span class="norm-pill">Industria 4.0</span>
+            <span class="norm-pill">Proyectos tradicionales</span>
+            <span class="norm-pill">Proyectos agile</span>
+            <span class="norm-pill">Proyectos híbridos</span>
+            <span class="norm-pill">Gestión de programas</span>
+<span class="norm-pill" aria-hidden="true">IEC</span>
+            <span class="norm-pill" aria-hidden="true">IEEE</span>
+            <span class="norm-pill" aria-hidden="true">PMI</span>
+            <span class="norm-pill" aria-hidden="true">ISO</span>
+            <span class="norm-pill" aria-hidden="true">Industria 4.0</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos tradicionales</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos agile</span>
+            <span class="norm-pill" aria-hidden="true">Proyectos híbridos</span>
+            <span class="norm-pill" aria-hidden="true">Gestión de programas</span></div></div>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="reveal-on-scroll reveal-fade-up" style="margin-top:2rem;">
+      <div class="cta-band">
+        <div>
+          <p>¿Tiene un proyecto que necesita dirección o ingeniería?
+            <span>Cuéntenos su caso. Le respondemos en menos de 24 horas.</span>
+          </p>
+        </div>
+        <a href="/es/contacto.html" class="btn-cta">Contactar ahora</a>
+      </div>
+    </section>
+
+    <section id="contacto" class="reveal-on-scroll reveal-fade-up" aria-labelledby="contacto-title">
+      <div class="section-label">Contacto</div>
+      <h2 id="contacto-title" style="margin-top:0.2rem;">Cuéntenos sobre su proyecto</h2>
+      <div class="fg-contact-wrapper">
+        <div class="fg-contact-info">
+          <div class="fg-badge-sla">
+            <svg class="fg-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <h3>Respuesta en menos de 24 horas</h3>
+              <p>Evaluación técnica preliminar y asignación de recursos sin compromiso.</p>
+            </div>
+          </div>
+          <div class="fg-info-items">
+            <div class="fg-info-item"><strong>Email:</strong> <a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a></div>
+            <div class="fg-info-item"><strong>Sede:</strong> Vitoria-Gasteiz, Álava (España)</div>
+            <div class="fg-info-item"><strong>Alcance:</strong> Proyectos en España y ámbito internacional</div>
+          </div>
+        </div>
+        <div class="fg-form-card">
+          <form id="fusgementContactForm" action="mailto:fusgement@fusgement.com" method="post" enctype="text/plain">
+            <div class="fg-form-row">
+              <div class="fg-form-group">
+                <label for="fg-name">Nombre *</label>
+                <input type="text" id="fg-name" name="name" required autocomplete="name" placeholder="Su nombre">
+              </div>
+              <div class="fg-form-group">
+                <label for="fg-company">Empresa *</label>
+                <input type="text" id="fg-company" name="company" required autocomplete="organization" placeholder="Empresa u organización">
+              </div>
+            </div>
+            <div class="fg-form-row">
+              <div class="fg-form-group">
+                <label for="fg-email">Email corporativo *</label>
+                <input type="email" id="fg-email" name="email" required autocomplete="email" placeholder="correo@empresa.com">
+              </div>
+              <div class="fg-form-group">
+                <label for="fg-service">Servicio de interés</label>
+                <select id="fg-service" name="service">
+                  <option value="Dirección de proyectos (PM / PMO)">Dirección de proyectos (PM / PMO)</option>
+                  <option value="Ingeniería eléctrica y subestaciones">Ingeniería eléctrica y subestaciones</option>
+                  <option value="Ingeniería multidisciplinar / Renovables">Ingeniería multidisciplinar / Renovables</option>
+                  <option value="Consultoría técnica y peritajes">Consultoría técnica y peritajes</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg-form-group">
+              <label for="fg-message">Detalles o requerimientos del proyecto *</label>
+              <textarea id="fg-message" name="message" rows="3" required placeholder="Describa brevemente el alcance técnico, ubicación o plazos estimados..."></textarea>
+            </div>
+            <button type="submit" class="fg-submit-btn">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Abrir consulta por email</span>
+            </button>
+            <p class="fg-form-note">Al enviar, se abrirá su aplicación de correo con los datos preparados. Revise y envíe el mensaje para completar la consulta.</p>
+            <p id="fg-form-feedback" class="fg-form-feedback" role="status" aria-live="polite" hidden>
+              Se ha preparado su mensaje. Si no se abre su aplicación de correo, escríbanos a
+              <a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a>.
+            </p>
+          </form>
+        
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-left small">
+      &copy; <span id="year"></span> Fusgement – fusgement.com
+    </div>
+    <div class="footer-right legal">
+      <a href="/es/legal.html">Aviso legal</a> |
+      <a href="/es/legal.html#privacidad">Política de privacidad</a> |
+      <a href="/es/legal.html#cookies">Política de cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<a class="fab-cta" href="/es/contacto.html">Contactar ahora</a>
+<script>
+const contactForm = document.getElementById('fusgementContactForm');
+contactForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const formData = new FormData(contactForm);
+  const body = [
+    `Nombre: ${formData.get('name')}`,
+    `Empresa: ${formData.get('company')}`,
+    `Email: ${formData.get('email')}`,
+    `Servicio: ${formData.get('service')}`,
+    '',
+    `Detalles del proyecto: ${formData.get('message')}`
+  ].join('\n');
+  const subject = `Consulta técnica - ${formData.get('company')}`;
+  window.location.href = `mailto:fusgement@fusgement.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('fg-form-feedback').hidden = false;
+});
+
+/* Foco de luz que sigue al cursor en las tarjetas de servicio */
+document.querySelectorAll('.servicio-card').forEach(c=>c.addEventListener('pointermove',e=>{
+  const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');}));
+</script>
+</body>
+</html>

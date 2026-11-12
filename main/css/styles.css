@@ -272,7 +272,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .texto-h5{font-size:0.83em;font-weight:700;margin:1.67em 0;white-space:pre-wrap}
 
 /* ── Aviso de cookies (js/consent.js) ─────────────────────── */
-.cc-banner{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#fff;color:#1f2937;border-top:4px solid var(--primary);box-shadow:0 -4px 18px rgba(0,0,0,0.2);padding:14px 16px}
+.cc-banner{position:fixed;left:0;right:0;bottom:0;z-index:1000;box-sizing:border-box;max-height:70vh;overflow-y:auto;background:#fff;color:#1f2937;border-top:4px solid var(--primary);box-shadow:0 -4px 18px rgba(0,0,0,0.2);padding:14px 16px}
 .cc-inner{max-width:var(--maxw,1100px);margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
 .cc-text{margin:0;flex:1 1 320px;font-size:0.95rem;line-height:1.5}
 .cc-text a{color:var(--primary);text-decoration:underline}

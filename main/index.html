@@ -11,7 +11,6 @@
   <link rel="alternate" hreflang="x-default" href="https://fusgement.com/es/index.html">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/index-2026.css">
-  <script>document.documentElement.classList.add('js');</script>
   <style>
     /* Compact navigation */
     .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #dde4ef;box-shadow:0 1px 3px rgba(11,37,69,.04);padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -52,7 +51,7 @@
     }
 
     /* Scroll reveal */
-    .js .reveal-on-scroll{opacity:0;will-change:transform,opacity,filter;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),filter .7s cubic-bezier(.16,1,.3,1)}
+    .reveal-ready .reveal-on-scroll{will-change:transform,opacity,filter}
     .reveal-fade-up{transform:translateY(28px);filter:blur(3px)}
     .reveal-fade-left{transform:translateX(-30px);filter:blur(3px)}
     .reveal-fade-right{transform:translateX(30px);filter:blur(3px)}
@@ -70,9 +69,9 @@
     }
 
     /* Fluid homepage images */
-    .content-image-big{width:min(100%,clamp(280px,34vw,420px));margin-inline:auto}
-    .section-with-image .content-image-big{margin-inline:auto;justify-items:center}
-    .content-image-big img,.figure-scope img{width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;max-width:100%}
+    .content-image-big{width:min(100%,clamp(280px,34vw,420px));margin-left:auto;margin-right:auto}
+    .section-with-image .content-image-big{width:min(100%,clamp(320px,40vw,520px));margin-left:auto;margin-right:auto;justify-items:center}
+    .content-image-big img,.figure-scope img{width:100%;height:auto;;object-fit:contain;max-width:100%;max-height: 900px;}
 
     /* Contact form */
     .fg-contact-wrapper{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:960px;margin:1.5rem auto;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box}
@@ -99,6 +98,11 @@
     @media(min-width:820px){.fg-contact-wrapper{grid-template-columns:5fr 7fr;align-items:start}}
     @media(max-width:480px){.fg-form-card{padding:1rem}}
     .main.full-width{grid-template-columns:minmax(0,1fr)}
+    .founder-certifications{align-self:start;min-width:0}
+    #founder-certifications-title{margin:1rem 0 0;font-size:1.05rem;text-align:center}
+    .founder-certifications-logos{display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .founder-certifications img{display:block;width:100%;max-width:240px;height:auto;object-fit:contain}
+    @media(min-width:1081px){.section-with-image.half.founder-intro{grid-template-columns:minmax(0,2fr) minmax(220px,1fr)}}
   </style>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -144,6 +148,8 @@
   }
   </script>
   <script src="/js/consent.js" defer></script>
+  <link rel="stylesheet" href="/css/site-enhancements.css">
+  <script src="/js/scroll-reveal.js" defer></script>
 </head>
 <body>
 
@@ -189,7 +195,7 @@
     <!-- 1. HERO -->
     <header class="hero-head">
       <p class="eyebrow reveal-hero-1">Project Management · Engineering · Consulting</p>
-      <h1 class="reveal-hero-2">Un proyecto es hacer algo innovador. <em>La gestión lo hace realidad.</em></h1>
+      <h1 class="reveal-hero-2">Un proyecto es hacer algo <span class="hero-impact-word">innovador</span>. <em>La gestión lo hace realidad.</em></h1>
       <div class="hero-cta reveal-hero-3">
         <a class="btn-cta" href="/es/contacto.html">Contactar ahora</a>
         <a class="btn-ghost" href="#servicios">Ver servicios</a>
@@ -197,7 +203,7 @@
       <p class="hero-trust reveal-hero-4">Experiencia previa del fundador en proyectos para <strong>Google</strong>, <strong>Iberdrola</strong>, <strong>Naturgy</strong>, <strong>Sener</strong> y <strong>Technip Energies</strong></p>
     </header>
 
-    <section class="section-with-image half reveal-on-scroll reveal-fade-up">
+    <section class="section-with-image half founder-intro reveal-on-scroll reveal-fade-up">
       <div class="section-text-small">
         <p class="lead">
           Fusgement es la empresa a la que delegar la dirección de proyectos,
@@ -213,7 +219,6 @@
             <span class="pill g">Consultoría de gestión</span>
             <span class="pill g">Desarrollo de proyectos</span>
             <span class="pill g">Consultoría Industrial</span>
-
           </div>
         <div class="valor-grid">
           <div class="valor-item">
@@ -235,13 +240,28 @@
         </div>
       </div>
 
+      <div class="founder-certifications" aria-labelledby="founder-certifications-title">
+        <div class="founder-certifications-logos">
+          <img class="pmp-certification" src="/images/pmpcertif.png"
+          alt="Certificación Project Management Professional (PMP) del PMI"
+          loading="lazy">
+          <img src="/images/cogiti%20miembro.webp"
+          alt="Acreditación de colegiación COGITI, número 2374"
+          loading="lazy">
+          <img src="/images/coiia%20miembro.webp"
+          alt="Acreditación de miembro del COIIA, número AD06079"
+          loading="lazy">
+        </div>
+        <h2 id="founder-certifications-title">Certificaciones del fundador</h2>
+      </div>
+
     </section>
 
     <!-- 1b. CIFRAS -->
     <section class="reveal-on-scroll reveal-fade-up" aria-label="Cifras clave">
       <div class="stats">
         <div class="stat"><div class="stat-num"><small>&lt;</small><span class="count" style="--to:24"></span><small>h</small></div><div class="stat-lbl">Respuesta a su consulta</div></div>
-        <div class="stat"><div class="stat-num">1M€+</div><div class="stat-lbl">Presupuesto máximo gestionado en proyectos previos</div></div>
+        <div class="stat"><div class="stat-num">1M€+</div><div class="stat-lbl">Presupuesto típico gestionado en proyectos previos</div></div>
         <div class="stat"><div class="stat-num"><span class="count" style="--to:5"></span>+</div><div class="stat-lbl">Años de experiencia previa en ingeniería eléctrica y dirección de proyectos</div></div>
       </div>
     </section>
@@ -340,7 +360,7 @@
       </div>
       <div class="dif-box">
           <div class="dif-num">1M€+</div>
-          <div class="dif-lbl">Presupuesto máximo gestionado</div>
+          <div class="dif-lbl">Presupuesto típico gestionado</div>
           <hr class="dif-sep">
           <div class="norm-title">Normativa y metodologías</div>
           <div class="marquee"><div class="marquee-track"><span class="norm-pill">IEC</span>
@@ -482,21 +502,6 @@ contactForm.addEventListener('submit', event => {
   window.location.href = `mailto:fusgement@fusgement.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   document.getElementById('fg-form-feedback').hidden = false;
 });
-
-const revealElements = document.querySelectorAll('.reveal-on-scroll');
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-  revealElements.forEach(element => element.classList.add('is-revealed'));
-} else {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.15 });
-  revealElements.forEach(element => revealObserver.observe(element));
-}
 
 /* Foco de luz que sigue al cursor en las tarjetas de servicio */
 document.querySelectorAll('.servicio-card').forEach(c=>c.addEventListener('pointermove',e=>{

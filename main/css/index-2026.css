@@ -30,7 +30,8 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
 
 /* ---------- Hero: imágenes y propuesta de valor ---------- */
 .section-with-image .content-image-big{margin:0;display:grid;gap:1rem;align-content:start}
-.section-with-image .content-image-big img{background:#fff;border:1px solid var(--border);box-shadow:var(--sh-sm);transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.section-with-image .content-image-big img,.section-with-image .founder-certifications img{background:#fff;border:1px solid var(--border);box-shadow:var(--sh-sm);transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.section-with-image .founder-certifications img.pmp-certification{background:transparent;border:0;box-shadow:none;transition:transform .5s var(--ease-out),filter .5s var(--ease-out)}
 .pill{transition:transform .3s var(--ease-out)}
 .valor-grid{counter-reset:valor}
 .valor-item{counter-increment:valor;transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out),border-color .25s,background .25s}
@@ -49,7 +50,7 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
 /* anillo dorado giratorio en las tarjetas destacadas */
 .servicio-card.destacado::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;opacity:0;transition:opacity .3s;
   background:conic-gradient(from var(--ang),transparent 60%,var(--accent) 85%,transparent);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
 @supports(grid-template-rows:subgrid){
   .servicios-grid .servicio-card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:.35rem;transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out),opacity .3s}
   .servicio-card h3,.servicio-card p{align-self:start}
@@ -61,7 +62,8 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
   .servicio-card:hover .sc-arrow{transform:translateX(5px)}
   .servicios-grid:has(.servicio-card:hover) .servicio-card:not(:hover){opacity:.6;transform:scale(.985)}
   .valor-item:hover{transform:translateY(-3px);border-left-color:var(--primary);box-shadow:var(--sh-md);background:#fff}
-  .section-with-image .content-image-big img:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--sh-md)}
+  .section-with-image .content-image-big img:hover,.section-with-image .founder-certifications img:hover{transform:translateY(-4px) scale(1.01);box-shadow:var(--sh-md)}
+  .section-with-image .founder-certifications img.pmp-certification:hover{box-shadow:none;filter:drop-shadow(0 14px 14px rgb(11 37 69/.25))}
   .pill:hover{transform:translateY(-2px)}
 }
 @media(prefers-reduced-motion:no-preference){
@@ -77,7 +79,7 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
 /* ---------- Por qué Fusgement ---------- */
 .dif-box{background:linear-gradient(135deg,var(--primary),var(--primary-700));border:0;color:#fff;margin-top:1.5rem;box-shadow:var(--sh-md);padding:clamp(1.4rem,3vw,2.4rem);position:relative;overflow:hidden;isolation:isolate}
 .dif-box::before{content:"";position:absolute;z-index:-1;top:-40%;left:50%;width:520px;height:520px;translate:-50% 0;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 22%,transparent),transparent)}
-.dif-num{font-size:clamp(3rem,8vw,5.4rem);line-height:1;letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums}
+.dif-num{font-size:clamp(4.25rem,13vw,8.5rem);font-weight:900;line-height:.9;letter-spacing:-.055em;color:var(--accent);font-variant-numeric:tabular-nums;-webkit-text-stroke:1px rgba(0, 0, 0, 0.9);paint-order:stroke fill;filter:drop-shadow(0 3px 5px rgb(0 0 0/.45))}
 .dif-lbl{font-size:.95rem;color:rgb(255 255 255/.8);margin-bottom:1rem}
 .dif-sep{border-top-color:rgb(255 255 255/.2);margin:1.1rem 0}
 .norm-title{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(255 255 255/.7);margin-bottom:.7rem;text-align:center}
@@ -128,7 +130,7 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
    v3 · MARKETING. Naranja = acción (CTA), azul = confianza, cian = apoyo.
    ========================================================================== */
 @property --num{syntax:"<integer>";inherits:false;initial-value:0}
-:root{--cta:#ff7a1a;--cta-2:#ffb703;--ink:#050f24;--cta-grad:linear-gradient(135deg,#ff6a00,#ffb703)}
+:root{--cta:#ff7a1a;--cta-2:#ffb703;--ink:#050f24;--cta-grad:linear-gradient(135deg,#ff6a00,#ffb703);--impact-grad:linear-gradient(105deg,#ff3d00 0%,#ff7a1a 18%,#ffb703 38%,#fff176 58%,#7ef0d2 78%,#36a2ff 100%)}
 
 /* Hero: más profundidad, titular mayor, frase clave animada y CTAs */
 .hero-head{background:
@@ -136,9 +138,12 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
   radial-gradient(34rem 22rem at 0 112%,rgb(34 211 238/.22),transparent 60%),
   radial-gradient(30rem 20rem at 55% 45%,rgb(47 107 255/.32),transparent 65%),
   linear-gradient(150deg,#0b2a66 0%,var(--ink) 100%);padding-block:clamp(2.4rem,6vw,4.6rem)}
-.hero-head h1{font-size:clamp(2rem,4.6vw + .6rem,4.3rem);max-width:20ch;line-height:1.05}
-.hero-head h1::after{background:var(--cta-grad);width:96px}
+.hero-head h1{font-size:clamp(2rem,4.6vw + .6rem,4.3rem);max-width:20ch;line-height:1.2}
+.hero-head h1::after{background:var(--cta-grad);width:5rem;margin-top:1rem;padding:0;gap:2em}
+.hero-head h1 .hero-impact-word{display:inline-block;background:var(--impact-grad);background-size:160% 100%;background-position:center;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .hero-head h1 em{font-style:normal;background:linear-gradient(90deg,#ffb703,#ff7a1a,#ffd36b,#ffb703);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.content .hero-head h1{max-width:100%;color:#fff}
+.content .hero-head h1 em{display:block;width:fit-content;max-width:100%;font-size:1.2em;line-height:1.2;letter-spacing:.005em;padding-bottom: 0.15em;}
 @media(prefers-reduced-motion:no-preference){@keyframes shimmer{to{background-position:200% 0}}.hero-head h1 em{animation:shimmer 7s linear infinite}}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.9rem}
 .hero-cta .btn-cta{display:inline-flex;align-items:center;padding:.95rem 1.9rem;font-size:1.05rem;background:var(--cta-grad);box-shadow:0 8px 28px rgb(255 106 0/.45)}
@@ -183,7 +188,7 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
 .servicio-card:not(.destacado){background:#fff;border:1px solid var(--border);border-top:4px solid var(--primary)}
 
 /* Caja de cifra y CTA final con más contraste */
-.dif-num{background:var(--cta-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dif-num{display:inline-block;background:var(--impact-grad);background-size:160% 100%;background-position:center;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .dif-box::before{background:radial-gradient(closest-side,rgb(255 122 26/.28),transparent)}
 .cta-band{background:var(--cta-grad);color:var(--ink);padding:clamp(1.8rem,4vw,3rem);border-radius:16px;box-shadow:0 16px 40px rgb(255 106 0/.3)}
 .cta-band::before{background:radial-gradient(closest-side,rgb(255 255 255/.45),transparent);top:-70%;right:20%}
@@ -208,3 +213,34 @@ body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-seri
 @media(min-width:800px){.fab-cta{display:none}}   /* en escritorio ya hay nav fija + tarjeta lateral */
 .aside.card.small h2{font-size:1rem;margin:0 0 .4rem;letter-spacing:0;color:var(--primary-700)}
 .aside.card.small p a{font-size:.88rem}
+
+/* Homepage certifications and contact form, shared by both locales. */
+.founder-certifications{align-self:start;min-width:0}
+.founder-certifications-logos{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.founder-certifications img{display:block;width:100%;max-width:240px;height:auto;object-fit:contain}
+#founder-certifications-title{margin:1rem 0 0;font-size:1.05rem;text-align:center}
+#services,#contact{scroll-margin-top:8rem}
+
+.fg-contact-wrapper{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:960px;margin:1.5rem auto;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box}
+.fg-contact-wrapper *{box-sizing:border-box}
+.fg-contact-info{min-width:0}
+.fg-badge-sla{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;padding:1rem;border:1px solid rgba(245,158,11,.4);border-radius:10px;background:#fff}
+.fg-badge-sla .fg-icon{width:22px;height:22px;flex-shrink:0;color:#d97706}
+.fg-badge-sla h3{margin:0 0 .25rem;color:#0b2545;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.fg-badge-sla p{margin:0;color:#475569;font-size:.75rem;line-height:1.4}
+.fg-info-items{display:flex;flex-direction:column;gap:.5rem;color:#334155;font-size:.85rem}
+.fg-info-item a{color:#0b3d91;font-weight:600;text-decoration:underline}
+.fg-form-card{padding:1.25rem 1.5rem;border:1px solid #e2e8f0;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.fg-form-row{display:grid;grid-template-columns:1fr;gap:.75rem}
+.fg-form-group{min-width:0;margin-bottom:.75rem}
+.fg-form-group label{display:block;margin-bottom:.25rem;color:#334155;font-size:.7rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.fg-form-group input,.fg-form-group select,.fg-form-group textarea{width:100%;padding:.6rem .75rem;border:1px solid #cbd5e1;border-radius:6px;background:#fff;color:#0f172a;font:inherit;font-size:.85rem}
+.fg-form-group input:focus,.fg-form-group select:focus,.fg-form-group textarea:focus{border-color:#0b3d91;outline:2px solid rgba(11,61,145,.15);outline-offset:1px}
+.fg-submit-btn{display:flex;width:100%;min-height:44px;align-items:center;justify-content:center;gap:.5rem;padding:.65rem 1rem;border:0;border-radius:6px;background:linear-gradient(90deg,#ffb703,#ff7a1a);color:#081a31;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+.fg-submit-btn:hover{filter:brightness(1.06)}
+.fg-form-note,.fg-form-feedback{margin:.75rem 0 0;color:#475569;font-size:.82rem}
+.fg-form-feedback[hidden]{display:none}
+.fg-form-feedback a{color:#0b3d91}
+@media(min-width:540px){.fg-form-row{grid-template-columns:1fr 1fr}}
+@media(min-width:820px){.fg-contact-wrapper{grid-template-columns:5fr 7fr;align-items:start}}
+@media(max-width:480px){.fg-form-card{padding:1rem}}

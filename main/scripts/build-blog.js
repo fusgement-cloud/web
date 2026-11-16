@@ -51,30 +51,8 @@ function categoryLabel(cat, lang) {
   return (map[lang] && map[lang][cat]) || cat;
 }
 
-function header(lang) {
+function header(lang, currentPath, alternatePath) {
   const es = lang === 'es';
-  return `<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-area">
-      <img src="/images/fusgement-logo6-fondo.png"
-           alt="Fusgement – ${es ? 'Gestión de proyectos e ingeniería eléctrica' : 'Project management and electrical engineering'}"
-           class="logo">
-      <div>
-        <div class="lema">FUSGEMENT - ${es ? 'La fusión de la coordinación con la optimización' : 'The fusion of coordination with optimization'}</div>
-        <div class="small">Project Management, Engineering &amp; Consulting Group</div>
-      </div>
-    </div>
-    <nav class="idiomas" aria-label="${es ? 'Selector de idioma' : 'Language selector'}">
-      <a href="/${es ? 'es' : 'en'}/blog/" class="lang-btn active">${ es ? 'ES' : 'EN'}</a>
-      <a href="/${es ? 'en' : 'es'}/blog/" class="lang-btn">${es ? 'EN' : 'ES'}</a>
-    </nav>
-  </div>
-</header>`;
-}
-
-function nav(lang) {
-  const es = lang === 'es';
-  // Mismo menú (7 enlaces) que las páginas estáticas; "Blog" va marcado como activo.
   const links = es ? [
     ['/es/index.html','Inicio'],
     ['/es/direccion-de-proyectos.html','Dirección de proyectos'],
@@ -82,7 +60,7 @@ function nav(lang) {
     ['/es/quienes-somos.html','Quiénes somos'],
     ['/es/clientes.html','Clientes'],
     ['/es/blog/','Blog'],
-    ['/es/contacto.html','Contacto'],
+    ['https://cms.fusgement.com','Proveedores'],
   ] : [
     ['/en/index.html','Home'],
     ['/en/projectmanagement.html','Project Management'],
@@ -90,15 +68,39 @@ function nav(lang) {
     ['/en/aboutus.html','About Us'],
     ['/en/customers.html','Clients'],
     ['/en/blog/','Blog'],
-    ['/en/contact.html','Contact'],
+    ['https://cms.fusgement.com','Suppliers'],
   ];
-  return `<nav class="nav-bar" aria-label="${es ? 'Navegación principal' : 'Main navigation'}">
-  <div class="nav-inner">
-    ${links.map(([href,label]) =>
-      `<div class="nav-innerindividual"><a href="${href}"${href.endsWith('/blog/') ? ' class="active" aria-current="page"' : ''}>${label}</a></div>`
-    ).join('\n    ')}
+  return `<header class="site-header">
+  <div class="header-inner">
+    <a href="/${es ? 'es' : 'en'}/index.html" class="logo-area" aria-label="${es ? 'Fusgement Inicio' : 'Fusgement Home'}">
+      <img src="/images/fusgement-logo-cuadrado.png"
+           alt="Fusgement – ${es ? 'Gestión de proyectos e ingeniería eléctrica' : 'Project management and electrical engineering'}"
+           class="logo">
+      <span class="brand-text">
+        <span class="lema">FUSGEMENT</span>
+        <span class="sub-lema">Project Management, Engineering &amp; Consulting Group</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="${es ? 'Navegación principal' : 'Main navigation'}">
+      ${links.map(([href,label]) =>
+        `<a href="${href}" class="nav-link${href === `/${es ? 'es' : 'en'}/blog/` ? ' active' : ''}"${href === `/${es ? 'es' : 'en'}/blog/` ? ' aria-current="page"' : ''}${href.startsWith('https://') ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`
+      ).join('\n      ')}
+    </nav>
+    <div class="nav-actions">
+      <nav class="lang-switch" aria-label="${es ? 'Selector de idioma' : 'Language selector'}">
+        <a href="${es ? currentPath : alternatePath}" class="lang-btn${es ? ' active' : ''}"${es ? ' aria-current="page"' : ''} title="Versión en Español">ES</a>
+        <a href="${es ? alternatePath : currentPath}" class="lang-btn${es ? '' : ' active'}"${es ? '' : ' aria-current="page"'} title="English version">EN</a>
+      </nav>
+      <a href="/${es ? 'es/contacto' : 'en/contact'}.html" class="btn-navbar-cta">
+        <span>${es ? 'Contactar' : 'Contact'}</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
   </div>
-</nav>`;
+</header>`;
 }
 
 function footer(lang) {
@@ -116,31 +118,6 @@ function footer(lang) {
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>`;
 }
 
-function aside(lang) {
-  const es = lang === 'es';
-  return `<aside class="aside card small">
-    <h2>${es ? 'Contacto rápido' : 'Quick contact'}</h2>
-    <p><a href="mailto:fusgement@fusgement.com">fusgement@fusgement.com</a></p>
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:0.9rem 0;">
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;">${es?'Servicios':'Services'}</p>
-    <nav>
-      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-        ${es ? `
-        <li><a href="/es/direccion-de-proyectos.html" style="font-size:0.84rem;color:var(--primary);">→ Dirección de proyectos</a></li>
-        <li><a href="/es/ingenieria-electrica.html" style="font-size:0.84rem;color:var(--primary);">→ Ingeniería eléctrica</a></li>
-        <li><a href="/es/ingenieria.html" style="font-size:0.84rem;color:var(--primary);">→ Ingeniería</a></li>
-        <li><a href="/es/otros-servicios.html" style="font-size:0.84rem;color:var(--primary);">→ Otros servicios</a></li>
-        ` : `
-        <li><a href="/en/projectmanagement.html" style="font-size:0.84rem;color:var(--primary);">→ Project Management</a></li>
-        <li><a href="/en/electrical.html" style="font-size:0.84rem;color:var(--primary);">→ Electrical Engineering</a></li>
-        <li><a href="/en/engineering.html" style="font-size:0.84rem;color:var(--primary);">→ Engineering</a></li>
-        <li><a href="/en/otherservices.html" style="font-size:0.84rem;color:var(--primary);">→ Other Services</a></li>
-        `}
-      </ul>
-    </nav>
-  </aside>`;
-}
-
 function buildPost(postData, lang, outDir) {
   const { title, slug, date, description, category, image, image_alt,
           author, published, en_slug, es_slug, content } = postData;
@@ -155,6 +132,10 @@ function buildPost(postData, lang, outDir) {
   const altUrl  = altSlug
     ? `${SITE_URL}/${altLang}/blog/${altSlug}.html`
     : `${SITE_URL}/${altLang}/blog/`;
+  const currentPath = `/${es?'es':'en'}/blog/${slug}.html`;
+  const alternatePath = altSlug
+    ? `/${altLang}/blog/${altSlug}.html`
+    : `/${altLang}/blog/`;
 
   ensureDir(outDir);
 
@@ -171,6 +152,7 @@ function buildPost(postData, lang, outDir) {
   <link rel="alternate" hreflang="x-default" href="${es ? pageUrl : altUrl}">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/site-enhancements.css">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${pageUrl}">
   <meta property="og:title" content="${title} | Fusgement">
@@ -207,11 +189,11 @@ function buildPost(postData, lang, outDir) {
   }
   </script>
   <script src="/js/consent.js" defer></script>
+  <script src="/js/scroll-reveal.js" defer></script>
 </head>
 <body>
-${header(lang)}
-${nav(lang)}
-<main class="main container">
+${header(lang, currentPath, alternatePath)}
+<main class="main container full-width">
   <article class="content card" itemscope itemtype="https://schema.org/BlogPosting">
     <nav aria-label="${es?'Ruta de navegación':'Breadcrumb'}" class="breadcrumb">
       <a href="/${es?'es':'en'}/index.html">${es?'Inicio':'Home'}</a>
@@ -236,7 +218,6 @@ ${nav(lang)}
       <a href="/${es?'es':'en'}/blog/">← ${es?'Volver al blog':'Back to blog'}</a>
     </div>
   </article>
-  ${aside(lang)}
 </main>
 ${footer(lang)}
 </body>
@@ -287,31 +268,48 @@ function buildIndex(posts, lang, outDir) {
   <link rel="alternate" hreflang="${es?'en':'es'}" href="${SITE_URL}/${es?'en':'es'}/blog/">
   <link rel="alternate" hreflang="x-default" href="${SITE_URL}/es/blog/">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/index-2026.css">
   <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/site-enhancements.css">
   <script src="/js/consent.js" defer></script>
+  <script src="/js/scroll-reveal.js" defer></script>
 </head>
 <body>
-${header(lang)}
-${nav(lang)}
-<main class="main container">
+${header(lang, `/${es?'es':'en'}/blog/`, `/${es?'en':'es'}/blog/`)}
+<main class="main container full-width">
   <article class="content card">
-    <nav aria-label="${es?'Ruta de navegación':'Breadcrumb'}" class="breadcrumb">
-      <a href="/${es?'es':'en'}/index.html">${es?'Inicio':'Home'}</a>
-      <span>›</span>
-      <span>Blog</span>
-    </nav>
-    <div class="section-label">Blog</div>
-    <h1 style="margin-top:0.2rem;">${es ? 'Artículos sobre gestión de proyectos e ingeniería' : 'Articles on project management and engineering'}</h1>
-    <p style="color:var(--muted);font-size:0.93rem;margin-bottom:1.8rem;">${es
-      ? 'Conocimiento técnico práctico del equipo de Fusgement sobre gestión de proyectos, PMO, ingeniería eléctrica y consultoría.'
-      : 'Practical technical knowledge from the Fusgement team on project management, PMO, electrical engineering and consulting.'}</p>
-    ${posts.filter(p=>p.published).length === 0
-      ? `<p style="color:var(--muted);">${es ? 'Próximamente, primeros artículos.' : 'First articles coming soon.'}</p>`
-      : `<div class="blog-grid">${postCards}</div>`}
+    <header class="hero-head">
+      <p class="eyebrow">${es ? 'Blog de Fusgement' : 'The Fusgement blog'}</p>
+      <h1>${es ? 'Artículos sobre <em>gestión de proyectos e ingeniería</em>' : 'Articles on <em>project management and engineering</em>'}</h1>
+      <p class="hero-trust">${es
+        ? 'Conocimiento técnico práctico del equipo de Fusgement sobre gestión de proyectos, PMO, ingeniería eléctrica y consultoría.'
+        : 'Practical technical knowledge from the Fusgement team on project management, PMO, electrical engineering and consulting.'}</p>
+      <div class="hero-cta">
+        <a class="btn-cta" href="/${es?'es/contacto':'en/contact'}.html">${es ? 'Hablemos de su proyecto' : 'Let’s discuss your project'}</a>
+        <a class="btn-ghost" href="#${es?'articulos':'articles'}">${es ? 'Ver artículos' : 'Explore articles'}</a>
+      </div>
+    </header>
+    <section id="${es?'articulos':'articles'}" class="reveal-on-scroll reveal-fade-up">
+      <div class="section-label">${es ? 'Publicaciones recientes' : 'Recent articles'}</div>
+      <h2>${es ? 'Ideas prácticas para sus proyectos' : 'Practical insight for your projects'}</h2>
+      ${posts.filter(p=>p.published).length === 0
+        ? `<p style="color:var(--muted);">${es ? 'Próximamente, primeros artículos.' : 'First articles coming soon.'}</p>`
+        : `<div class="blog-grid">${postCards}</div>`}
+    </section>
+    <section class="reveal-on-scroll reveal-fade-up">
+      <div class="cta-band">
+        <div>
+          <p>${es ? '¿Necesita apoyo para llevar su proyecto a buen puerto?' : 'Need support to move your project forward?'}
+            <span>${es ? 'Cuéntenos qué necesita y exploraremos cómo podemos ayudarle.' : 'Tell us what you need and we’ll explore how we can help.'}</span>
+          </p>
+        </div>
+        <a class="btn-cta" href="/${es?'es/contacto':'en/contact'}.html">${es ? 'Contactar ahora' : 'Contact us'}</a>
+      </div>
+    </section>
   </article>
-  ${aside(lang)}
 </main>
 ${footer(lang)}
+<a class="fab-cta" href="/${es?'es/contacto':'en/contact'}.html">${es ? 'Contactar ahora' : 'Contact now'}</a>
 </body>
 </html>`;
 
